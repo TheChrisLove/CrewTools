@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar xmlns:local="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/toolbar_review_job_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorGrayTitleBar"
+        android:minHeight="?attr/actionBarSize"
+        local:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageview_toolbar_review_job_menu_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_close"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@color/fontColorWhite" />
+
+            <TextView
+                android:id="@+id/textview_toolbar_review_job_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center_horizontal"
+                android:text="REVIEW JOB"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@color/fontColorBlack"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textview_toolbar_review_job_done"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_margin="@dimen/margin_medium"
+                android:gravity="center_horizontal"
+                android:text="Done"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@color/fontColorWhite"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_review_job_complete"
+        android:layout_below="@+id/toolbar_review_job_top">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/light_grey_background"
+                android:paddingBottom="@dimen/padding_medium"
+                android:paddingLeft="@dimen/padding_large"
+                android:paddingTop="@dimen/padding_large"
+                android:text="OUTSTANDING TASKS" />
+
+            <RelativeLayout
+                android:id="@+id/relativelayout_review_job_outstanding_job_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/edittextBackgroundWhite">
+
+                <ImageView
+                    android:id="@+id/imageview_review_job_outstanding_checked"
+                    android:layout_width="@dimen/close_icon_height_width"
+                    android:layout_height="@dimen/close_icon_height_width"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/margin_medium"
+                    android:src="@drawable/ic_unchecked" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/imageview_review_job_outstanding_checked"
+                    android:maxLines="2"
+                    android:padding="@dimen/padding_medium"
+                    android:text="All tasks have been completed"
+                    android:textAppearance="?android:textAppearanceSmall" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/linearlayout_outstanding_jobs_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"></LinearLayout>
+
+            <TextView
+                android:id="@+id/textview_review_job_ensure_complete_msg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/light_grey_background"
+                android:paddingBottom="@dimen/padding_medium"
+                android:paddingLeft="@dimen/padding_large"
+                android:paddingTop="@dimen/padding_medium"
+                android:text="Ensure that you have performed each task and tap to complete." />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/light_grey_background"
+                android:paddingBottom="@dimen/padding_medium"
+                android:paddingLeft="@dimen/padding_large"
+                android:paddingTop="@dimen/padding_large"
+                android:text="OUTSTANDING INVOICES" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/edittextBackgroundWhite">
+
+                <ImageView
+                    android:id="@+id/imageview_review_job_invoices_checked"
+                    android:layout_width="@dimen/close_icon_height_width"
+                    android:layout_height="@dimen/close_icon_height_width"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/margin_medium"
+                    android:src="@drawable/ic_unchecked" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/imageview_review_job_invoices_checked"
+                    android:maxLines="2"
+                    android:padding="@dimen/padding_medium"
+                    android:text="Genarate invoices"
+                    android:textAppearance="?android:textAppearanceSmall" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/light_grey_background"
+                android:paddingBottom="@dimen/padding_medium"
+                android:paddingLeft="@dimen/padding_large"
+                android:paddingTop="@dimen/padding_large"
+                android:text="FINAL PHOTOS" />
+
+            <RelativeLayout
+                android:id="@+id/relativelayout_review_job_photos_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/edittextBackgroundWhite">
+
+                <ImageView
+                    android:id="@+id/imageview_review_job_final_photos_checked"
+                    android:layout_width="@dimen/close_icon_height_width"
+                    android:layout_height="@dimen/close_icon_height_width"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/margin_medium"
+                    android:src="@drawable/ic_unchecked" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/imageview_review_job_final_photos_checked"
+                    android:maxLines="2"
+                    android:padding="@dimen/padding_medium"
+                    android:text="No final photos"
+                    android:textAppearance="?android:textAppearanceSmall" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/light_grey_background"
+                android:paddingBottom="@dimen/padding_medium"
+                android:paddingLeft="@dimen/padding_large"
+                android:paddingTop="@dimen/padding_large"
+                android:text="Tap to add final photos to this job." />
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/button_review_job_complete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        android:text="Complete Job"
+        android:textAppearance="?android:textAppearanceSmall"
+        android:textColor="@color/fontColorWhite" />
+</RelativeLayout>

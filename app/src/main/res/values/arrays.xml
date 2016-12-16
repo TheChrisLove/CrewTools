@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="payment_entries">
+        <item>0/100</item>
+        <item>50/50</item>
+        <item>monthly</item>
+    </string-array>
+
+
+    <integer-array name="accept_with_entries">
+        <item>30</item>
+        <item>60</item>
+        <item>90</item>
+    </integer-array>
+</resources>

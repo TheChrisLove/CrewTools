@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="300dp"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".clients.ClientAddAddressDialogActivity">
+
+
+    <EditText
+        android:id="@+id/editText_add_address_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/address_name" />
+
+    <Switch
+        android:id="@+id/switchPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text="@string/primary" />
+
+    <EditText
+        android:id="@+id/editText_add_address1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/address1"
+        android:inputType="textPostalAddress" />
+
+    <EditText
+        android:id="@+id/editText_add_address2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/address2"
+        android:inputType="textPostalAddress" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editText_add_address_city"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".50"
+            android:hint="@string/city" />
+
+        <EditText
+            android:id="@+id/editText_add_address_state"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".25"
+            android:hint="@string/state"
+            android:maxLength="2" />
+
+        <EditText
+            android:id="@+id/editText_add_address_zip"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".25"
+            android:hint="@string/zip"
+            android:inputType="number" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="2.5dp"
+            android:layout_weight=".5"
+            android:background="@color/light_grey_background"
+            android:elevation="5dp"
+            android:onClick="cancelAddAddressClick"
+            android:text="@string/cancel"
+            android:textColor="@color/buttonFontColor" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2.5dp"
+            android:layout_weight=".5"
+            android:background="@color/light_grey_background"
+            android:elevation="5dp"
+            android:onClick="okAddAddressClick"
+            android:text="@string/ok"
+            android:textColor="@color/buttonFontColor" />
+
+    </LinearLayout>
+</LinearLayout>

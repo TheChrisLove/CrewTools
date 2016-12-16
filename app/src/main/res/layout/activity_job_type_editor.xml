@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar xmlns:local="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/toolbar_job_type_editor_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorGrayTitleBar"
+        android:minHeight="?attr/actionBarSize"
+        local:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        local:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textview_toolbar_job_type_editor_menu_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="Cancel"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@color/fontColorWhite" />
+
+            <TextView
+                android:id="@+id/textview_toolbar_job_type_editor_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center_horizontal"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@color/fontColorBlack"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textview_toolbar_job_type_editor_done"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_medium"
+                android:text="Done"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@color/fontColorWhite" />
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar_job_type_editor_top">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/light_grey_background"
+                android:paddingLeft="@dimen/padding_large"
+                android:paddingTop="@dimen/padding_large" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:background="@color/fontColorWhite"
+                    android:paddingBottom="@dimen/padding_medium"
+                    android:paddingLeft="@dimen/padding_large"
+                    android:paddingTop="@dimen/padding_medium"
+                    android:text="Quantity"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/fontColorBlack" />
+
+                <EditText
+                    android:id="@+id/edittext_job_type_editor_quantity"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:background="@color/fontColorWhite"
+                    android:gravity="right"
+                    android:hint="Quantity"
+                    android:paddingBottom="@dimen/padding_medium"
+                    android:paddingLeft="@dimen/padding_large"
+                    android:paddingRight="@dimen/padding_large"
+                    android:paddingTop="@dimen/padding_medium"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/buttonFontColor" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:layout_marginLeft="@dimen/margin_large"
+                android:layout_marginRight="@dimen/margin_large"
+                android:background="@color/light_grey_background" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:background="@color/fontColorWhite"
+                    android:paddingBottom="@dimen/padding_medium"
+                    android:paddingLeft="@dimen/padding_large"
+                    android:paddingTop="@dimen/padding_medium"
+                    android:text="Per Acre @"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/fontColorBlack" />
+
+                <EditText
+                    android:id="@+id/edittext_job_type_editor_per_acre"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:background="@color/fontColorWhite"
+                    android:gravity="right"
+                    android:hint="Per Acre @"
+                    android:paddingBottom="@dimen/padding_medium"
+                    android:paddingLeft="@dimen/padding_large"
+                    android:paddingRight="@dimen/padding_large"
+                    android:paddingTop="@dimen/padding_medium"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/buttonFontColor" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:layout_marginLeft="@dimen/margin_large"
+                android:layout_marginRight="@dimen/margin_large"
+                android:background="@color/light_grey_background" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:background="@color/fontColorWhite"
+                    android:paddingBottom="@dimen/padding_medium"
+                    android:paddingLeft="@dimen/padding_large"
+                    android:paddingTop="@dimen/padding_medium"
+                    android:text="Total"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/fontColorBlack" />
+
+                <EditText
+                    android:id="@+id/edittext_job_type_editor_total"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:background="@color/fontColorWhite"
+                    android:gravity="right"
+                    android:hint="Total"
+                    android:paddingBottom="@dimen/padding_medium"
+                    android:paddingLeft="@dimen/padding_large"
+                    android:paddingRight="@dimen/padding_large"
+                    android:paddingTop="@dimen/padding_medium"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/buttonFontColor" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:layout_marginLeft="@dimen/margin_large"
+                android:layout_marginRight="@dimen/margin_large"
+                android:background="@color/light_grey_background" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:background="@color/fontColorWhite"
+                    android:paddingBottom="@dimen/padding_medium"
+                    android:paddingLeft="@dimen/padding_large"
+                    android:paddingTop="@dimen/padding_medium"
+                    android:text="Item is taxable"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/fontColorBlack" />
+
+                <Switch
+                    android:id="@+id/switch_job_type_editor_istaxable"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:background="@color/fontColorWhite"
+                    android:gravity="right|center_vertical"
+                    android:padding="@dimen/padding_medium" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:layout_marginLeft="@dimen/margin_large"
+                android:layout_marginRight="@dimen/margin_large"
+                android:background="@color/light_grey_background" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="@color/edittextBackgroundWhite"
+                android:gravity="left|top"
+                android:hint="Type a description of this service..."
+                android:padding="@dimen/padding_medium"
+                android:textAppearance="?android:textAppearanceSmall" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        android:text="Save Changes"
+        android:textAppearance="?android:textAppearanceSmall"
+        android:textColor="@color/fontColorWhite" />
+</RelativeLayout>

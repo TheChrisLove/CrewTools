@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/relativelayout_photos_selection_layout"
+        android:background="@color/colorGrayBackground">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorGrayTextBackground"
+                android:padding="@dimen/padding_medium"
+                android:text="@string/all_images"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@color/fontColorWhite" />
+
+            <GridView
+                android:id="@+id/gridview_photos_before_grid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:horizontalSpacing="1dp"
+                android:numColumns="3"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="1dp" />
+
+            <!--<TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorGrayTextBackground"
+                android:padding="@dimen/padding_medium"
+                android:text="IN MESSAGE"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@color/fontColorWhite" />
+
+            <GridView
+                android:id="@+id/gridview_photos_in_message_grid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:horizontalSpacing="1dp"
+                android:numColumns="3"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="1dp" />-->
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/relativelayout_photos_selection_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary">
+
+        <ImageView
+            android:id="@+id/imageview_photos_upload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:src="@android:drawable/ic_menu_upload" />
+
+        <TextView
+            android:id="@+id/textview_photos_selection_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:padding="@dimen/padding_medium"
+            android:text="1 Photo selected"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/fontColorWhite" />
+
+        <ImageView
+            android:id="@+id/imageview_photos_remove"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:src="@android:drawable/ic_menu_delete" />
+    </RelativeLayout>
+</RelativeLayout>

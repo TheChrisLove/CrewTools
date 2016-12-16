@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="@dimen/padding_extra_large">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:text="@string/get_started_crew_tools"
+        android:textAppearance="?android:textAppearanceSmall"
+        android:textColor="@color/fontColorWhite"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/snag_your_username"
+        android:textAppearance="?android:textAppearanceSmall"
+        android:textColor="@color/fontColorWhite" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/edittext_group_top_margin"
+        android:background="@drawable/rounded_border_background"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/editTextCreateName"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/rounded_border_top_orange_white_background"
+            android:drawableRight="@drawable/ic_cross"
+            android:hint="Name"
+            android:paddingLeft="@dimen/padding_medium"
+            android:paddingRight="@dimen/padding_medium"
+            android:singleLine="true"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/textColor" />
+
+        <EditText
+            android:id="@+id/editTextCreateEmail"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/rounded_border_bottom_white_background"
+            android:drawableRight="@drawable/ic_cross"
+            android:hint="E-mail"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="@dimen/padding_medium"
+            android:paddingRight="@dimen/padding_medium"
+            android:singleLine="true"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/textColor" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_extra_large"
+        android:background="@drawable/rounded_border_background"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/editTextCreateUsername"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/rounded_border_top_orange_white_background"
+            android:drawableRight="@drawable/ic_cross"
+            android:hint="Username"
+            android:paddingLeft="@dimen/padding_medium"
+            android:paddingRight="@dimen/padding_medium"
+            android:singleLine="true"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/textColor" />
+
+        <EditText
+            android:id="@+id/editTextCreatePassword"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/edittextBackgroundWhite"
+            android:drawableRight="@drawable/ic_cross"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:paddingLeft="@dimen/padding_medium"
+            android:paddingRight="@dimen/padding_medium"
+            android:singleLine="true"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/textColor" />
+
+        <EditText
+            android:id="@+id/editTextCreateConfirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/rounded_border_bottom_orange_white_background"
+            android:drawableRight="@drawable/ic_cross"
+            android:hint="Confirm Password"
+            android:inputType="textPassword"
+            android:paddingLeft="@dimen/padding_medium"
+            android:paddingRight="@dimen/padding_medium"
+            android:singleLine="true"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/textColor" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_extra_large">
+
+        <ImageView
+            android:id="@+id/imageview_create_an_account_left_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/padding_medium"
+            android:src="@drawable/ic_left_arrow" />
+
+        <Button
+            android:id="@+id/button_create_an_account_continue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/rounded_border_background"
+            android:padding="@dimen/padding_large"
+            android:text="Continue"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/buttonFontColor"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+</LinearLayout>

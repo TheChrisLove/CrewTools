@@ -1,0 +1,61 @@
+<resources>
+
+    <style name="AppTheme" parent="AppTheme.Base" />
+
+    <style name="AppTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+<!--        <item name="android:calendarViewStyle">@style/Widget.CalendarView.Custom</item>-->
+        <!-- Apply default style for dialogs 
+        <item name="android:dialogTheme">@style/MyAlertDialogTheme</item>
+        <item name="android:alertDialogTheme">@style/MyAlertDialogTheme</item> -->
+    </style>
+    
+    <style name="MyAlertDialogTheme" parent="Theme.AppCompat.Dialog">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="MyCustomTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorColor">@color/colorPrimary</item>
+        <item name="tabIndicatorHeight">@dimen/tab_indicator_height</item>
+        <item name="tabPaddingStart">@dimen/padding_extra_small</item>
+        <item name="tabPaddingEnd">@dimen/padding_extra_small</item>
+        <item name="tabBackground">?attr/selectableItemBackground</item>
+        <item name="tabTextAppearance">@style/MyCustomTabTextAppearance</item>
+        <item name="tabSelectedTextColor">@color/fontColorWhite</item>
+    </style>
+
+    <style name="MyCustomTabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">@dimen/tab_font_size</item>
+        <item name="android:textColor">@color/fontColorWhite</item>
+        <item name="textAllCaps">false</item>
+    </style>
+    
+    <style name="Widget.CalendarView.Custom" parent="android:Widget.CalendarView">
+        <item name="android:focusedMonthDateColor">@color/colorPrimary</item>
+        <item name="android:weekNumberColor">@color/colorPrimary</item>
+        <item name="android:weekDayTextAppearance">@style/MyCustomTabTextAppearance</item>
+        <item name="android:dateTextAppearance">@style/MyCustomTabTextAppearance</item>
+        <item name="android:selectedWeekBackgroundColor">@color/colorPrimary</item>
+    </style>
+    <!--<style name="Base.Widget.Design.TabLayout" parent="android:Widget">-->
+    <!--<item name="tabIndicatorColor">@color/colorPrimary</item>-->
+    <!--<item name="tabIndicatorHeight">2dp</item>-->
+    <!--<item name="tabPaddingStart">5dp</item>-->
+    <!--<item name="tabPaddingEnd">5dp</item>-->
+    <!--<item name="tabBackground">?attr/selectableItemBackground</item>-->
+    <!--<item name="tabTextAppearance">@style/AppTheme.TextAppearance.Design.Tab</item>-->
+    <!--<item name="tabSelectedTextColor">?android:textColorPrimary</item>-->
+    <!--</style>-->
+
+    <!--<style name="AppTheme.TextAppearance.Design.Tab" parent="TextAppearance.AppCompat.Button">-->
+    <!--<item name="android:textSize">?android:textAppearanceSmall</item>-->
+    <!--<item name="android:textColor">@color/fontColorWhite</item>-->
+    <!--<item name="textAllCaps">true</item>-->
+    <!--</style>-->
+</resources>

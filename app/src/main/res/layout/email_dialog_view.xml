@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".clients.ClientAddEmailDialogActivity">
+
+    <EditText
+        android:id="@+id/editText_add_email_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/email_name" />
+
+    <Switch
+        android:id="@+id/switchPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text="@string/primary" />
+
+    <EditText
+        android:id="@+id/editText_add_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="2.5dp"
+            android:layout_weight=".5"
+            android:background="@color/light_grey_background"
+            android:elevation="5dp"
+            android:onClick="cancelEmailClick"
+            android:text="@string/cancel"
+            android:textColor="@color/buttonFontColor" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2.5dp"
+            android:layout_weight=".5"
+            android:background="@color/light_grey_background"
+            android:elevation="5dp"
+            android:onClick="AddEmailClick"
+            android:text="@string/ok"
+            android:textColor="@color/buttonFontColor" />
+
+    </LinearLayout>
+</LinearLayout>

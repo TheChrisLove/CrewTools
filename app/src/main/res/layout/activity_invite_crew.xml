@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorPrimary"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".crew.InviteCrewActivity">
+
+    <android.support.v7.widget.Toolbar xmlns:local="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/toolbar_invite_crew_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        local:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageview_toolbar_invite_crew_menu_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_close"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@color/fontColorWhite" />
+
+            <TextView
+                android:id="@+id/textview_toolbar_invite_crew_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center_horizontal"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@color/fontColorBlack"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imageview_toolbar_invite_crew_upload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_medium"
+                android:src="@android:drawable/ic_menu_share"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@color/fontColorWhite" />
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:text="@string/invite_your_crew"
+        android:textAppearance="?android:textAppearanceSmall"
+        android:textColor="@color/fontColorWhite"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/adding_members_to_crew"
+        android:textAppearance="?android:textAppearanceSmall"
+        android:textColor="@color/fontColorWhite" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_extra_large"
+        android:layout_marginRight="@dimen/margin_extra_large"
+        android:gravity="center_horizontal"
+        android:text="@string/have_your_team_install_crewtools"
+        android:textAppearance="?android:textAppearanceSmall"
+        android:textColor="@color/fontColorWhite" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_extra_extra_large"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/text_accept_invite_password_1"
+            android:layout_width="@dimen/edittext_height"
+            android:layout_height="@dimen/edittext_height"
+            android:layout_margin="@dimen/margin_small"
+            android:background="@drawable/rounded_border_background"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:text="5"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/textColor" />
+
+        <TextView
+            android:id="@+id/text_accept_invite_password_2"
+            android:layout_width="@dimen/edittext_height"
+            android:layout_height="@dimen/edittext_height"
+            android:layout_margin="@dimen/margin_small"
+            android:background="@drawable/rounded_border_background"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:text="1"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/textColor" />
+
+        <TextView
+            android:id="@+id/text_accept_invite_password_3"
+            android:layout_width="@dimen/edittext_height"
+            android:layout_height="@dimen/edittext_height"
+            android:layout_margin="@dimen/margin_small"
+            android:background="@drawable/rounded_border_background"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:text="5"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/textColor" />
+
+        <TextView
+            android:id="@+id/text_accept_invite_password_4"
+            android:layout_width="@dimen/edittext_height"
+            android:layout_height="@dimen/edittext_height"
+            android:layout_margin="@dimen/margin_small"
+            android:background="@drawable/rounded_border_background"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:text="3"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/textColor" />
+
+        <TextView
+            android:id="@+id/text_accept_invite_password_5"
+            android:layout_width="@dimen/edittext_height"
+            android:layout_height="@dimen/edittext_height"
+            android:layout_margin="@dimen/margin_small"
+            android:background="@drawable/rounded_border_background"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:text="3"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/textColor" />
+
+        <TextView
+            android:id="@+id/text_accept_invite_password_6"
+            android:layout_width="@dimen/edittext_height"
+            android:layout_height="@dimen/edittext_height"
+            android:layout_margin="@dimen/margin_small"
+            android:background="@drawable/rounded_border_background"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:text="6"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/textColor" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textview_invite_crew_new_users"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_extra_extra_large"
+        android:text="New users will be enrolled as Crewmates"
+        android:textAppearance="?android:textAppearanceSmall"
+        android:textColor="@color/fontColorWhite" />
+
+    <TextView
+        android:id="@+id/textview_invite_crew_change_role"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:padding="@dimen/padding_medium"
+        android:text="Change Roles"
+        android:textAppearance="?android:textAppearanceSmall"
+        android:textColor="@color/fontColorWhite"
+        android:textStyle="bold" />
+
+</LinearLayout>

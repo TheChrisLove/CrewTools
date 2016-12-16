@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="@dimen/startup_outer_margin"
+        android:layout_marginRight="@dimen/startup_outer_margin"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_large"
+            android:src="@drawable/crew_tools_logo" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Forget paper. Get ready to take your estimating and contracts mobile"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/fontColorWhite"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_large"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/textview_startup_sign_in"
+                android:gravity="right"
+                android:text="Have an account? "
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@color/fontColorWhite" />
+
+            <TextView
+                android:id="@+id/textview_startup_sign_in"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="@string/sign_in"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@color/fontColorWhite"
+                android:onClick="startupClick" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_startup_create_an_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/startup_button_bottom_margin"
+        android:background="@drawable/rounded_border_background"
+        android:padding="@dimen/padding_large"
+        android:text="Create An Account"
+        android:textAppearance="?android:textAppearanceSmall"
+        android:textColor="@color/buttonFontColor"
+        android:textStyle="bold" />
+</RelativeLayout>

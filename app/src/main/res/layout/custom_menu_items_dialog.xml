@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_border_background"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textview_custom_menu_dialog_heading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/padding_medium"
+            android:text="Title"
+            android:textAppearance="?android:textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/textview_custom_menu_dialog_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/padding_medium"
+            android:text="Message"
+            android:textAppearance="?android:textAppearanceSmall" />
+
+        <ListView
+            android:id="@+id/listview_custom_menu_dialog_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@null" />
+
+        <Button
+            android:id="@+id/button_custom_menu_dialog_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_border_background"
+            android:padding="@dimen/padding_large"
+            android:text="CANCEL"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/buttonFontColor"
+            android:textStyle="bold" />
+    </LinearLayout>
+</LinearLayout>

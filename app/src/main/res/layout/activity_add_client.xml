@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar xmlns:local="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/toolbar_add_client_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorGrayTitleBar"
+        android:minHeight="?attr/actionBarSize"
+        android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageview_add_client_menu_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/ic_close"
+                android:tint="@color/fontColorWhite" />
+
+            <TextView
+                android:id="@+id/textview_toolbar_add_client_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center_horizontal"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@color/fontColorBlack"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textview_toolbar_add_client_done"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_medium"
+                android:text="Done"
+                android:textColor="@color/fontColorWhite" />
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/button_add_client_save"
+        android:layout_below="@+id/toolbar_add_client_top">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/light_grey_background"
+                android:paddingLeft="@dimen/padding_large"
+                android:paddingTop="@dimen/padding_large" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:background="@color/fontColorWhite"
+                    android:paddingBottom="@dimen/padding_medium"
+                    android:paddingLeft="@dimen/padding_large"
+                    android:paddingTop="@dimen/padding_medium"
+                    android:text="Name"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/fontColorBlack" />
+
+                <EditText
+                    android:id="@+id/editText_add_client_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:background="@color/fontColorWhite"
+                    android:gravity="right"
+                    android:hint="Name"
+                    android:paddingBottom="@dimen/padding_medium"
+                    android:paddingLeft="@dimen/padding_large"
+                    android:paddingRight="@dimen/padding_large"
+                    android:paddingTop="@dimen/padding_medium"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/buttonFontColor" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:layout_marginLeft="@dimen/margin_large"
+                android:layout_marginRight="@dimen/margin_large"
+                android:background="@color/light_grey_background" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:background="@color/fontColorWhite"
+                    android:paddingBottom="@dimen/padding_medium"
+                    android:paddingLeft="@dimen/padding_large"
+                    android:paddingTop="@dimen/padding_medium"
+                    android:text="Company"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/fontColorBlack" />
+
+                <EditText
+                    android:id="@+id/editText_add_client_company"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:background="@color/fontColorWhite"
+                    android:gravity="right"
+                    android:hint="Company"
+                    android:paddingBottom="@dimen/padding_medium"
+                    android:paddingLeft="@dimen/padding_large"
+                    android:paddingRight="@dimen/padding_large"
+                    android:paddingTop="@dimen/padding_medium"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/buttonFontColor" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:layout_marginLeft="@dimen/margin_large"
+                android:layout_marginRight="@dimen/margin_large"
+                android:background="@color/light_grey_background" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:background="@color/fontColorWhite"
+                    android:paddingBottom="@dimen/padding_medium"
+                    android:paddingLeft="@dimen/padding_large"
+                    android:paddingTop="@dimen/padding_medium"
+                    android:text="E-mail"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/fontColorBlack" />
+
+                <EditText
+                    android:id="@+id/editText_add_client_email"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:background="@color/fontColorWhite"
+                    android:gravity="right"
+                    android:hint="E-mail"
+                    android:paddingBottom="@dimen/padding_medium"
+                    android:paddingLeft="@dimen/padding_large"
+                    android:paddingRight="@dimen/padding_large"
+                    android:paddingTop="@dimen/padding_medium"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/buttonFontColor" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:layout_marginLeft="@dimen/margin_large"
+                android:layout_marginRight="@dimen/margin_large"
+                android:background="@color/light_grey_background" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:background="@color/fontColorWhite"
+                    android:paddingBottom="@dimen/padding_medium"
+                    android:paddingLeft="@dimen/padding_large"
+                    android:paddingTop="@dimen/padding_medium"
+                    android:text="Phone"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/fontColorBlack" />
+
+                <EditText
+                    android:id="@+id/editText_add_client_phone"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:background="@color/fontColorWhite"
+                    android:gravity="right"
+                    android:hint="Phone"
+                    android:paddingBottom="@dimen/padding_medium"
+                    android:paddingLeft="@dimen/padding_large"
+                    android:paddingRight="@dimen/padding_large"
+                    android:paddingTop="@dimen/padding_medium"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/buttonFontColor" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:layout_marginLeft="@dimen/margin_large"
+                android:layout_marginRight="@dimen/margin_large"
+                android:background="@color/light_grey_background" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:background="@color/fontColorWhite"
+                    android:paddingBottom="@dimen/padding_medium"
+                    android:paddingLeft="@dimen/padding_large"
+                    android:paddingTop="@dimen/padding_medium"
+                    android:text="Contact By"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/fontColorBlack" />
+
+                <Spinner
+                    android:id="@+id/spinner_add_client_contact_by"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:background="@color/fontColorWhite"
+                    android:entries="@array/call_by_entries"
+                    android:textDirection="rtl"
+                    android:paddingBottom="@dimen/padding_medium"
+                    android:paddingLeft="@dimen/padding_large"
+                    android:paddingRight="@dimen/padding_large"
+                    android:paddingTop="@dimen/padding_medium"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/buttonFontColor" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:layout_marginLeft="@dimen/margin_large"
+                android:layout_marginRight="@dimen/margin_large"
+                android:background="@color/light_grey_background" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/light_grey_background"
+                android:paddingLeft="@dimen/padding_large"
+                android:paddingTop="@dimen/padding_large"
+                android:paddingBottom="@dimen/padding_medium"
+                android:text="ADDRESS" />
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/listview_add_client_address"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="addAddressClick"
+                android:background="@color/edittextBackgroundWhite">
+
+                <ImageView
+                    android:id="@+id/imageview_create_job_add_address"
+                    android:layout_width="@dimen/close_icon_height_width"
+                    android:layout_height="@dimen/close_icon_height_width"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/margin_medium"
+                    android:src="@drawable/ic_circle_plus" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/imageview_create_job_add_address"
+                    android:maxLines="2"
+                    android:padding="@dimen/padding_medium"
+                    android:text="Add Adress"
+                    android:textAppearance="?android:textAppearanceSmall" />
+
+            </RelativeLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/light_grey_background"
+                android:paddingLeft="@dimen/padding_large"
+                android:paddingTop="@dimen/padding_large"
+                android:paddingBottom="@dimen/padding_medium"
+                android:text="ADDRESS" />
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/listview_add_client_email"/>
+            <RelativeLayout
+                android:id="@+id/relativelayout_create_job_add_new_service"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="addEmailClick"
+                android:background="@color/edittextBackgroundWhite">
+
+                <ImageView
+                    android:id="@+id/imageview_create_job_add_email_address"
+                    android:layout_width="@dimen/close_icon_height_width"
+                    android:layout_height="@dimen/close_icon_height_width"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/margin_medium"
+                    android:src="@drawable/ic_circle_plus" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/imageview_create_job_add_email_address"
+                    android:maxLines="2"
+                    android:padding="@dimen/padding_medium"
+                    android:text="Add Email Adress"
+                    android:textAppearance="?android:textAppearanceSmall" />
+
+            </RelativeLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/light_grey_background"
+                android:paddingLeft="@dimen/padding_large"
+                android:paddingTop="@dimen/padding_large"
+                android:paddingBottom="@dimen/padding_medium"
+                android:text="PHONE NUMBERS" />
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/listview_add_client_phone"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="addPhoneClick"
+                android:background="@color/edittextBackgroundWhite">
+
+                <ImageView
+                    android:id="@+id/imageview_create_job_add_phone_number"
+                    android:layout_width="@dimen/close_icon_height_width"
+                    android:layout_height="@dimen/close_icon_height_width"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/margin_medium"
+                    android:src="@drawable/ic_circle_plus" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/imageview_create_job_add_phone_number"
+                    android:maxLines="2"
+                    android:padding="@dimen/padding_medium"
+                    android:text="Add Phone Number"
+                    android:textAppearance="?android:textAppearanceSmall" />
+
+
+
+            </RelativeLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/light_grey_background"
+                android:paddingLeft="@dimen/padding_large"
+                android:paddingTop="@dimen/padding_large"
+                android:paddingBottom="@dimen/padding_medium"
+                android:text="Notes" />
+            <EditText
+                android:id="@+id/editText_add_client_note"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@color/fontColorWhite"
+                android:gravity="left|top"
+                android:hint="Type optional notes about this client"
+                android:padding="@dimen/padding_medium"
+                android:textAppearance="?android:textAppearanceSmall" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:onClick="saveChangesClick"
+        android:id="@+id/button_add_client_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        android:text="Save Changes"
+        android:textAppearance="?android:textAppearanceSmall"
+        android:textColor="@color/fontColorWhite" />
+</RelativeLayout>

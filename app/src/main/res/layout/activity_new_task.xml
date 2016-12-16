@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar xmlns:local="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/toolbar_new_task_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorGrayTitleBar"
+        android:minHeight="?attr/actionBarSize"
+        local:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageview_toolbar_new_task_menu_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_close" />
+
+            <TextView
+                android:id="@+id/textview_toolbar_new_task_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center_horizontal"
+                android:text="NEW TASK"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@color/fontColorBlack"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textview_toolbar_new_task_done"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_margin="@dimen/margin_medium"
+                android:gravity="center_horizontal"
+                android:text="Done"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@color/fontColorWhite"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar_new_task_top">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/light_grey_background"
+                android:paddingLeft="@dimen/padding_large"
+                android:paddingTop="@dimen/padding_extra_large" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:background="@color/fontColorWhite"
+                    android:paddingBottom="@dimen/padding_medium"
+                    android:paddingLeft="@dimen/padding_large"
+                    android:paddingTop="@dimen/padding_medium"
+                    android:text="Task"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/fontColorBlack" />
+
+                <EditText
+                    android:id="@+id/edittext_new_task_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:background="@color/fontColorWhite"
+                    android:gravity="right"
+                    android:paddingBottom="@dimen/padding_medium"
+                    android:paddingLeft="@dimen/padding_large"
+                    android:paddingRight="@dimen/padding_large"
+                    android:paddingTop="@dimen/padding_medium"
+                    android:text="Task"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/buttonFontColor" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:layout_marginLeft="@dimen/margin_large"
+                android:layout_marginRight="@dimen/margin_large"
+                android:background="@color/light_grey_background" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:background="@color/fontColorWhite"
+                    android:paddingBottom="@dimen/padding_medium"
+                    android:paddingLeft="@dimen/padding_large"
+                    android:paddingTop="@dimen/padding_medium"
+                    android:text="Job"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/fontColorBlack" />
+
+                <TextView
+                    android:id="@+id/textview_new_task_job"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:background="@color/fontColorWhite"
+                    android:gravity="right"
+                    android:hint="Job"
+                    android:paddingBottom="@dimen/padding_medium"
+                    android:paddingLeft="@dimen/padding_large"
+                    android:paddingRight="@dimen/padding_large"
+                    android:paddingTop="@dimen/padding_medium"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/buttonFontColor" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:layout_marginLeft="@dimen/margin_large"
+                android:layout_marginRight="@dimen/margin_large"
+                android:background="@color/light_grey_background" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:background="@color/fontColorWhite"
+                    android:paddingBottom="@dimen/padding_medium"
+                    android:paddingLeft="@dimen/padding_large"
+                    android:paddingTop="@dimen/padding_medium"
+                    android:text="Place"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/fontColorBlack" />
+
+                <TextView
+                    android:id="@+id/textview_new_task_place"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:background="@color/fontColorWhite"
+                    android:gravity="right"
+                    android:hint="Place"
+                    android:paddingBottom="@dimen/padding_medium"
+                    android:paddingLeft="@dimen/padding_large"
+                    android:paddingRight="@dimen/padding_large"
+                    android:paddingTop="@dimen/padding_medium"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/buttonFontColor" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:layout_marginLeft="@dimen/margin_large"
+                android:layout_marginRight="@dimen/margin_large"
+                android:background="@color/light_grey_background" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:background="@color/fontColorWhite"
+                    android:paddingBottom="@dimen/padding_medium"
+                    android:paddingLeft="@dimen/padding_large"
+                    android:paddingTop="@dimen/padding_medium"
+                    android:text="Priority"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/fontColorBlack" />
+
+                <TextView
+                    android:id="@+id/textview_new_task_priority"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:background="@color/fontColorWhite"
+                    android:gravity="right"
+                    android:hint="Priority"
+                    android:paddingBottom="@dimen/padding_medium"
+                    android:paddingLeft="@dimen/padding_large"
+                    android:paddingRight="@dimen/padding_large"
+                    android:paddingTop="@dimen/padding_medium"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/buttonFontColor" />
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/light_grey_background"
+                android:paddingBottom="@dimen/padding_medium"
+                android:paddingLeft="@dimen/padding_large"
+                android:paddingTop="@dimen/padding_extra_large"
+                android:text="TIMEFRAME" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:background="@color/fontColorWhite"
+                    android:paddingBottom="@dimen/padding_medium"
+                    android:paddingLeft="@dimen/padding_large"
+                    android:paddingTop="@dimen/padding_medium"
+                    android:text="Date"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/fontColorBlack" />
+
+                <TextView
+                    android:id="@+id/textview_new_task_date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:background="@color/fontColorWhite"
+                    android:gravity="right"
+                    android:hint="Date"
+                    android:paddingBottom="@dimen/padding_medium"
+                    android:paddingLeft="@dimen/padding_large"
+                    android:paddingRight="@dimen/padding_large"
+                    android:paddingTop="@dimen/padding_medium"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/buttonFontColor" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/border_width"
+                android:layout_marginLeft="@dimen/margin_large"
+                android:layout_marginRight="@dimen/margin_large"
+                android:background="@color/light_grey_background" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:background="@color/fontColorWhite"
+                    android:paddingBottom="@dimen/padding_medium"
+                    android:paddingLeft="@dimen/padding_large"
+                    android:paddingTop="@dimen/padding_medium"
+                    android:text="Time"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/fontColorBlack" />
+
+                <TextView
+                    android:id="@+id/textview_new_task_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.6"
+                    android:background="@color/fontColorWhite"
+                    android:gravity="right"
+                    android:hint="Time"
+                    android:paddingBottom="@dimen/padding_medium"
+                    android:paddingLeft="@dimen/padding_large"
+                    android:paddingRight="@dimen/padding_large"
+                    android:paddingTop="@dimen/padding_medium"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/buttonFontColor" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/light_grey_background"
+                android:paddingBottom="@dimen/padding_large"
+                android:paddingLeft="@dimen/padding_large"
+                android:paddingTop="@dimen/padding_extra_large"
+                android:text="ASSIGNED TO" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/light_grey_background"
+                android:paddingBottom="@dimen/padding_medium"
+                android:paddingLeft="@dimen/padding_large"
+                android:paddingTop="@dimen/padding_extra_large"
+                android:text="NOTES" />
+
+            <EditText
+                android:id="@+id/edittext_create_view_job_description"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@color/fontColorWhite"
+                android:enabled="false"
+                android:gravity="left|top"
+                android:hint="Type optional notes on this invoice"
+                android:padding="@dimen/padding_medium"
+                android:textAppearance="?android:textAppearanceSmall" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/button_new_task_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        android:text="Save Changes"
+        android:textAppearance="?android:textAppearanceSmall"
+        android:textColor="@color/fontColorWhite" />
+
+</RelativeLayout>

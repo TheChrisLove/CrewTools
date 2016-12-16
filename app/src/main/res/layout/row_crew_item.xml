@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_extra_small">
+
+        <TextView
+            android:id="@+id/textview_row_crew_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/fontColorBlack"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textview_row_crew_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textview_row_crew_heading"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/fontColorGray" />
+
+        <TextView
+            android:id="@+id/textview_row_crew_a"
+            android:layout_width="@dimen/next_icon_height_width"
+            android:layout_height="@dimen/next_icon_height_width"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:layout_toRightOf="@id/textview_row_crew_heading"
+            android:background="@drawable/background_theme_circle"
+            android:gravity="center"
+            android:text="A"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/fontColorWhite"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/textview_row_crew_m"
+            android:layout_width="@dimen/next_icon_height_width"
+            android:layout_height="@dimen/next_icon_height_width"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:layout_toRightOf="@id/textview_row_crew_heading"
+            android:background="@drawable/background_gray_circle"
+            android:gravity="center"
+            android:text="M"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/fontColorWhite"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/imageview_row_crew_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:layout_toLeftOf="@+id/imageview_row_crew_next"
+            android:src="@drawable/ic_setting"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/imageview_row_crew_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:src="@drawable/ic_right_arrow" />
+    </RelativeLayout>
+</LinearLayout>

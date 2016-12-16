@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="300dp"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".clients.ClientAddPhoneDialogActivity">
+
+
+    <EditText
+        android:id="@+id/editText_add_phone_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/phone_name" />
+
+    <Switch
+        android:id="@+id/switchPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text="@string/primary_phone" />
+
+    <EditText
+        android:id="@+id/editText_add_phone_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/phoneNumber"
+        android:inputType="phone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="2.5dp"
+            android:layout_weight=".5"
+            android:background="@color/light_grey_background"
+            android:elevation="5dp"
+            android:onClick="cancelAddPhoneClick"
+            android:text="@string/cancel"
+            android:textColor="@color/buttonFontColor" />
+
+        <Button           android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2.5dp"
+            android:layout_weight=".5"
+            android:background="@color/light_grey_background"
+            android:elevation="5dp"
+            android:onClick="okAddPhoneClick"
+            android:text="@string/ok"
+            android:textColor="@color/buttonFontColor" />
+
+    </LinearLayout>
+</LinearLayout>

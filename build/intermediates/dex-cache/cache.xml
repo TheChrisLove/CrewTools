@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/chris/Desktop/Invel Site Assets/CrewTools/CrewTools/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/libs/internal_impl-24.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.0"
+        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
+        <dex dex="/Users/chris/Desktop/Invel Site Assets/CrewTools/CrewTools/app/build/intermediates/pre-dexed/debug/internal_impl-24.0.0_388775d59ad3976fe226ad8833400496e9fc0600.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chris/Desktop/Invel Site Assets/CrewTools/CrewTools/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.0"
+        sha1="90710775f3cf8f865f2693b06b97144c2f1c13a6">
+        <dex dex="/Users/chris/Desktop/Invel Site Assets/CrewTools/CrewTools/app/build/intermediates/pre-dexed/debug/instant-run_8e955ea0c35532f6786ffb80395c5d9902fdfdab.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chris/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-applinks/1.4.0/8ad21bf21784dacce5f2043afb97218cc377e835/bolts-applinks-1.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.0"
+        sha1="8ad21bf21784dacce5f2043afb97218cc377e835">
+        <dex dex="/Users/chris/Desktop/Invel Site Assets/CrewTools/CrewTools/app/build/intermediates/pre-dexed/debug/bolts-applinks-1.4.0_b30149dbed57ba27d5df3ad27f5b252a13f7679a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chris/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.0"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="/Users/chris/Desktop/Invel Site Assets/CrewTools/CrewTools/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0_4a50b131f8a44f3355a795b7ebf3a5117216005d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chris/Desktop/Invel Site Assets/CrewTools/CrewTools/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.0"
+        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
+        <dex dex="/Users/chris/Desktop/Invel Site Assets/CrewTools/CrewTools/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.0.0_3a7877c8eb12ed144c1a2fae380c693aa45bac30.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chris/Desktop/Invel Site Assets/CrewTools/CrewTools/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.0"
+        sha1="894922f67adeaaef51f077a29e315da21a3382d3">
+        <dex dex="/Users/chris/Desktop/Invel Site Assets/CrewTools/CrewTools/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-24.0.0_155b5d07e41f9ec3a5525a1285f1b976fd57a840.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chris/.gradle/caches/modules-2/files-2.1/com.parse/parse-android/1.13.1/5f645bf60e3b88ccc02bd2a4018c5e3ef2f77d0a/parse-android-1.13.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.0"
+        sha1="5f645bf60e3b88ccc02bd2a4018c5e3ef2f77d0a">
+        <dex dex="/Users/chris/Desktop/Invel Site Assets/CrewTools/CrewTools/app/build/intermediates/pre-dexed/debug/parse-android-1.13.1_e0fb69cdf963d74b33ce5bfdc4b4e13d99a2094d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chris/Desktop/Invel Site Assets/CrewTools/CrewTools/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.0"
+        sha1="7365c086bf75755e40e85d00b5220b5d92f1bfb5">
+        <dex dex="/Users/chris/Desktop/Invel Site Assets/CrewTools/CrewTools/app/build/intermediates/pre-dexed/debug/instant-run-bootstrap_88e28c4552e85e7edec6e1b69eecb38046c242ee.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chris/Desktop/Invel Site Assets/CrewTools/CrewTools/app/build/intermediates/exploded-aar/com.github.gcacace/signature-pad/1.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.0"
+        sha1="7e38ceffed1fb752b3ab4f4b3678697ff1924c57">
+        <dex dex="/Users/chris/Desktop/Invel Site Assets/CrewTools/CrewTools/app/build/intermediates/pre-dexed/debug/com.github.gcacace-signature-pad-1.2.0_bbb5af6fbaab93d85b1f68e8d81f33411a4d6d3f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chris/Desktop/Invel Site Assets/CrewTools/CrewTools/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.0"
+        sha1="0874286cc2fd88d54fdf130e9d5372730da6de97">
+        <dex dex="/Users/chris/Desktop/Invel Site Assets/CrewTools/CrewTools/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-24.0.0_6e7cfacdc1a526ccb395f8a0a4f2e4c6155ec974.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chris/Desktop/Invel Site Assets/CrewTools/CrewTools/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.0"
+        sha1="3bd97cfefd783e9de1dd1c30574a6adb44b4409b">
+        <dex dex="/Users/chris/Desktop/Invel Site Assets/CrewTools/CrewTools/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-24.0.0_2ed5ac0c1e61e41fb72c5663ed21af6397677d83.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chris/Desktop/Invel Site Assets/CrewTools/CrewTools/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.0"
+        sha1="e70f608219ed6b974644c333249ab2bb7b71de98">
+        <dex dex="/Users/chris/Desktop/Invel Site Assets/CrewTools/CrewTools/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-24.0.0_0884600d0925585fcfca952f7bdcb75562e16286.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chris/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.0.0/support-annotations-24.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.0"
+        sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
+        <dex dex="/Users/chris/Desktop/Invel Site Assets/CrewTools/CrewTools/app/build/intermediates/pre-dexed/debug/support-annotations-24.0.0_16596381eb224843674c30a8a283d897843aff53.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chris/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.3.2/d6b7f0093cec6c9faf65dbfd6a6a345d0ed25e27/picasso-2.3.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.0"
+        sha1="d6b7f0093cec6c9faf65dbfd6a6a345d0ed25e27">
+        <dex dex="/Users/chris/Desktop/Invel Site Assets/CrewTools/CrewTools/app/build/intermediates/pre-dexed/debug/picasso-2.3.2_6403e0e811e9c59442ae41e3dc9f7b6d83a7364d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chris/Desktop/Invel Site Assets/CrewTools/CrewTools/app/build/intermediates/exploded-aar/com.squareup/android-times-square/1.6.5/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.0"
+        sha1="248fed0fd4ef1442847a45fc57b1b9b2be0d0550">
+        <dex dex="/Users/chris/Desktop/Invel Site Assets/CrewTools/CrewTools/app/build/intermediates/pre-dexed/debug/com.squareup-android-times-square-1.6.5_cdd9b9234d69cdfe4930ccbd6a2df86cd994eced.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chris/Desktop/Invel Site Assets/CrewTools/CrewTools/app/build/intermediates/exploded-aar/com.android.support/design/24.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.0"
+        sha1="fc29308a7a8f6d4407b34634eb48fb8b817f9b23">
+        <dex dex="/Users/chris/Desktop/Invel Site Assets/CrewTools/CrewTools/app/build/intermediates/pre-dexed/debug/com.android.support-design-24.0.0_c58c333a7c6e2d8e9cbd17af7a82dceb638bbc04.jar" />
+    </item>
+
+</items>

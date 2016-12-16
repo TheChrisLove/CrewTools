@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--<item-->
+        <!--android:id="@+id/action_add"-->
+        <!--android:icon="@android:drawable/ic_menu_save"-->
+        <!--android:title="Add"-->
+        <!--app:showAsAction="always" />-->
+    <!--<item-->
+        <!--android:id="@+id/action_jobs"-->
+        <!--android:icon="@android:drawable/ic_menu_save"-->
+        <!--android:title="Jobs"-->
+        <!--app:showAsAction="always" />-->
+    <!--<item-->
+        <!--android:id="@+id/action_clients"-->
+        <!--android:icon="@android:drawable/ic_menu_save"-->
+        <!--android:title="Clients"-->
+        <!--app:showAsAction="always" />-->
+    <!--<item-->
+        <!--android:id="@+id/action_calender"-->
+        <!--android:icon="@android:drawable/ic_menu_save"-->
+        <!--android:title="Calender"-->
+        <!--app:showAsAction="always" />-->
+    <!--<item-->
+        <!--android:id="@+id/action_invoices"-->
+        <!--android:icon="@android:drawable/ic_menu_save"-->
+        <!--android:title="Invoices"-->
+        <!--app:showAsAction="always" />-->
+    <!--<item-->
+        <!--android:id="@+id/action_crew"-->
+        <!--android:icon="@android:drawable/ic_menu_save"-->
+        <!--android:title="Crew"-->
+        <!--app:showAsAction="always" />-->
+
+</menu>

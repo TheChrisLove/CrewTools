@@ -1,0 +1,37 @@
+<resources>
+    <!--Amol phone-->
+    <!-- Default screen margins, per the Android Design guidelines. 3.7" - 4.0"-->
+    <dimen name="activity_horizontal_margin">12dp</dimen>
+    <dimen name="activity_vertical_margin">12dp</dimen>
+
+    <dimen name="tab_indicator_height">4dp</dimen>
+    <dimen name="tab_font_size">9sp</dimen>
+    <dimen name="title_bar_height">35dp</dimen>
+
+    <dimen name="edittext_height">25dp</dimen>
+
+    <dimen name="border_width">1dp</dimen>
+    <dimen name="button_edge_radius">3dp</dimen>
+    <dimen name="next_icon_height_width">15dp</dimen>
+
+    <dimen name="margin_small">3dp</dimen>
+    <dimen name="margin_medium">7dp</dimen>
+    <dimen name="margin_large">12dp</dimen>
+    <dimen name="margin_extra_large">15dp</dimen>
+    <dimen name="margin_extra_extra_large">30dp</dimen>
+    <dimen name="margin_extra_small">2dp</dimen>
+
+    <dimen name="padding_small">3dp</dimen>
+    <dimen name="padding_medium">7dp</dimen>
+    <dimen name="padding_large">12dp</dimen>
+    <dimen name="padding_extra_large">15dp</dimen>
+    <dimen name="padding_extra_small">2dp</dimen>
+
+    <!--Startup Screen-->
+    <dimen name="startup_logo_height_width">120dp</dimen>
+    <dimen name="startup_outer_margin">35dp</dimen>
+    <dimen name="startup_button_bottom_margin">45dp</dimen>
+
+    <!--Create an Account-->
+    <dimen name="edittext_group_top_margin">35dp</dimen>
+</resources>

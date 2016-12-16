@@ -1,0 +1,135 @@
+<resources>
+    <string name="app_name">Crew Tools</string>
+    <string name="parse_app_id">aemyYKDfUZ0Eu3XmNRvcL35EfsEj3UOXOzh2fPrp</string>
+    <string name="parse_client_key">X33IizlEL1PXYG4dulQAFGNorQkP0iWFiAIFnKDW</string>
+    <string name="sign_in"><u>Sign In</u></string>
+    <string name="get_started_crew_tools">Get started with Crew Tools.</string>
+    <string name="snag_your_username">Snag your username so we know who you are.</string>
+    <string name="great_youre_almost_there">Great! You\'re almost there.</string>
+    <string name="type_in_your_invitation_code">Type in your invitation code to join a crew.</string>
+    <string name="invite_crew_administrator">if you don\'t have an invitation code, have your crew administrator invite you.</string>
+    <string-array name="call_by_entries">
+        <item>Phone Call</item>
+        <item>Send Email</item>
+        <item>Send Text</item>
+    </string-array>
+    <string-array name="task_types">
+        <item>Client</item>
+        <item>Job</item>
+        <item>Invoice</item>
+    </string-array>
+    <string-array name="occurrence_picker">
+        <item>Once</item>
+        <item>Twice</item>
+        <item>3 times</item>
+        <item>4 times</item>
+        <item>5 times</item>
+        <item>6 times</item>
+        <item>7 times</item>
+        <item>8 times</item>
+    </string-array>
+
+    <string-array name="priority_picker">
+        <item>Low</item>
+        <item>Normal</item>
+        <item>Medium</item>
+        <item>High</item>
+        <item>Urgent</item>
+    </string-array>
+
+    <string-array name="payment_values">
+        <item>On Completion</item>
+        <item>50/50</item>
+        <item>monthly</item>
+    </string-array>
+
+    <string-array name="accept_values">
+        <item>30 days</item>
+        <item>60 days</item>
+        <item>90 days</item>
+    </string-array>
+
+
+    <string name="ok">OK</string>
+    <string name="cancel">CANCEL</string>
+    <string name="address1">Address 1</string>
+    <string name="primary">Is this the primary address?</string>
+    <string name="address2">Address 2</string>
+    <string name="address_name">Name of Address</string>
+    <string name="city">Add City</string>
+    <string name="add_address">Add Address</string>
+    <string name="state">State</string>
+    <string name="zip">Zip</string>
+    <string name="phoneNumber">Phone Number</string>
+    <string name="primary_phone">Is this primary phone number?</string>
+    <string name="phone_name">Name of Phone Number</string>
+    <string name="email">Email Address</string>
+    <string name="email_name">Name of Email</string>
+    <string name="save_changes">Save Changes</string>
+    <string name="na">N/A</string>
+    <string name="name">Name</string>
+    <string name="type">Type</string>
+    <string name="client">Client</string>
+    <string name="place">Place</string>
+    <string name="services">Services</string>
+    <string name="add_services">Add Services</string>
+    <string name="total">Total</string>
+    <string name="timeframe">Time Frame</string>
+    <string name="perform_this_job">Perform this Job</string>
+    <string name="priority">Priority</string>
+    <string name="starting_date">Starting Date</string>
+    <string name="not_set">Not Set</string>
+    <string name="completion_date">Completion Date</string>
+    <string name="terms">Terms</string>
+    <string name="payment">Payment</string>
+    <string name="accept_within">Accept Within</string>
+    <string name="job_description">Job Description</string>
+    <string name="type_optional_notes_about_this_client">Type optional notes about this client</string>
+    <string name="task">Task</string>
+    <string name="for_text">For</string>
+    <string name="none">None</string>
+    <string name="date">Date</string>
+    <string name="set_date">Set Date</string>
+    <string name="time">Time</string>
+    <string name="set_time">Set Time</string>
+    <string name="assign_to">Assigned To</string>
+    <string name="add_new_client">Add New Client</string>
+    <string name="invoices">INVOICES</string>
+    <string name="all_day">All Day</string>
+    <string name="add_task">Add Task</string>
+    <string name="job_not_saved">Job Not Saved</string>
+    <string name="message_job_not_saved">The job was not sucessfully saved press \'OK\' if you would like to try to save it again.  Or press \'Cancel\' to go back.</string>
+    <string name="job_no_client">No Client</string>
+    <string name="job_no_client_message">You must have a client selected before saving a job.</string>
+    <string name="select_date">Select Date</string>
+    <string name="select_type_of_task">Select Type of Task</string>
+    <string name="select_client">Select Client</string>
+    <string name="select_location">Select Location</string>
+    <string name="adding_members_to_crew">Adding members to your crew is simple.</string>
+    <string name="have_your_team_install_crewtools">Have your team install CrewTools on their device. Then type the number when prompted.</string>
+    <string name="invite_your_crew">Invite your crew.</string>
+
+    <string name="legal_guarantee">All material is guaranteed to be specified. All work to be complete in a workmanlike manner according to standard practices.</string>
+    <string name="legal_alterations">Any alteration or deviation from the above specification involving extra costs will be done only upon a written change order. The costs will become an extra charge over and above the estimate.</string>
+    <string name="legal_limitations">All elements of this agreement are contingent upon strikes, accidents or delays beyond our control. The estimate does not include material price increases, or additional labor and material which may be required should unforeseen problems</string>
+    <string name="legal_cancellation">You,the buyer, may cancel this transaction at any time prior to midnight of the third business day after the date of this transaction. Cancellation must be done in writing.</string>
+    <string name="done">Done</string>
+    <string name="edit">Edit</string>
+    <string name="call_now">Call Now</string>
+    <string name="account">Account</string>
+    <string name="jobs">Jobs</string>
+    <string name="calendar">Calendar</string>
+    <string name="all_images">All Images</string>
+    <string name="quantity">Quantity</string>
+    <string name="item_is_taxable">Item is Taxable</string>
+    <string name="share_contract_with">Share Contract with...</string>
+    <string name="add_services_types">Add the Service Type this company Handles</string>
+    <string name="we_hereby_submit_specification_and_estimates_for_proposal_as_follows">We hereby submit specification and estimates for proposal as follows:</string>
+    <string name="description">Description</string>
+    <string name="unit_price">Unit Price</string>
+    <string name="line_total">Line Total</string>
+    <string name="subtotal">Subtotal</string>
+    <string name="we_propose">We Propose</string>
+    <string name="we_propose_hereby">hereby to furnish material and labor - complete in accordance with above specification, for the sum of:</string>
+
+</resources>

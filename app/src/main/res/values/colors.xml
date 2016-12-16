@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FF4F27</color>
+    <color name="colorPrimaryDark">#FF2F00</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorGrayTitleBar">#93908F</color>
+    <color name="colorGrayTextBackground">#93908F</color>
+    <color name="colorGrayBackground">#50494F</color>
+
+    <color name="fontColorWhite">#FFFFFF</color>
+    <color name="fontColorBlack">#000000</color>
+    <color name="fontColorGray">#A5A5A5</color>
+
+    <color name="transparentWhite">#99FFFFFF</color>
+
+    <color name="light_grey_background">#EDEDED</color>
+    <color name="toolbar_background">#2A2A2A</color>
+
+    <color name="edittextBackgroundWhite">#FFFFFF</color>
+    <color name="edittextBackgroundOrnageWhite">#FFF5F3</color>
+
+    <color name="hintColor">#FF4F27</color>
+    <color name="textColor">#FF4F27</color>
+
+    <color name="buttonFontColor">#FF4F27</color>
+    <color name="buttonBackgroundColor">#FFFFFF</color>
+</resources>

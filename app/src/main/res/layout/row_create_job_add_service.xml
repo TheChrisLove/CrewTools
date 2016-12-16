@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/edittextBackgroundWhite">
+
+        <ImageView
+            android:id="@+id/imageview_create_job_add_service_remove"
+            android:layout_width="@dimen/close_icon_height_width"
+            android:layout_height="@dimen/close_icon_height_width"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin_medium"
+            android:src="@drawable/ic_remove" />
+
+        <TextView
+            android:id="@+id/textview_create_job_add_service_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/textview_create_job_add_service_amount"
+            android:layout_toRightOf="@+id/imageview_create_job_add_service_remove"
+            android:maxLines="2"
+            android:padding="@dimen/padding_medium"
+            android:text="Mow"
+            android:textAppearance="?android:textAppearanceSmall" />
+
+        <TextView
+            android:id="@+id/textview_create_job_add_service_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/margin_small"
+            android:layout_toLeftOf="@+id/imageview_create_job_add_service_edit"
+            android:background="@color/edittextBackgroundWhite"
+            android:text="$ 123.00"
+            android:inputType="numberDecimal"
+            android:padding="@dimen/padding_medium"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/colorPrimary" />
+
+        <ImageView
+            android:id="@+id/imageview_create_job_add_service_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/margin_medium"
+            android:src="@drawable/ic_edit" />
+    </RelativeLayout>
+
+</LinearLayout>

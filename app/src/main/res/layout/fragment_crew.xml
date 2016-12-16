@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/linearlayout_crew_search_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/toolbar_background"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_medium">
+
+        <EditText
+            android:id="@+id/edittext_crew_search"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/edittext_height"
+            android:background="@drawable/rounded_border_background"
+            android:gravity="center"
+            android:hint="Search Crew" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listview_crew_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_crew_sign_out"
+        android:layout_below="@id/linearlayout_crew_search_layout"
+        android:layout_marginLeft="@dimen/margin_medium" />
+
+    <Button
+        android:id="@+id/button_crew_sign_out"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        android:text="Sign Out"
+        android:textAllCaps="false"
+        android:textColor="@color/fontColorWhite" />
+</RelativeLayout>

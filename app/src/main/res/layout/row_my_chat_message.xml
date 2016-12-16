@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/padding_small">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="@dimen/margin_extra_extra_large"
+        android:background="@drawable/img_my_chat_bubble"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_medium">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textview_chat_date_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_medium"
+                android:layout_marginRight="@dimen/margin_medium"
+                android:text="09/07/2016 01:37 AM"
+                android:textColor="@color/fontColorWhite"
+                android:textSize="@dimen/tab_font_size" />
+
+            <TextView
+                android:id="@+id/textview_chat_sender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/margin_medium"
+                android:text="09/07/2016 01:37 AM"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:textColor="@color/fontColorWhite"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageview_chat_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_medium"
+            android:adjustViewBounds="true"
+            android:scaleType="fitStart" />
+
+        <TextView
+            android:id="@+id/textview_chat_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_medium"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/fontColorWhite" />
+    </LinearLayout>
+</RelativeLayout>
