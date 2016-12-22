@@ -985,7 +985,7 @@
                                 android:layout_above="@id/signature_estimate_line"
                                 android:layout_alignParentRight="true"
                                 android:textSize="10sp"
-                                android:text="John Hancock"
+                                android:text=""
                                 android:textStyle="italic"
                                 android:gravity="center"
                                 android:layout_alignStart="@+id/signature_estimate_line"

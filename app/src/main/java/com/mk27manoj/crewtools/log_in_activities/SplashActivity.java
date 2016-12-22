@@ -45,23 +45,19 @@ public class SplashActivity extends AppCompatActivity {
             public void run() {
                 // This method will be executed once the timer is over
                 // Start your app main activity
-
                 SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(SplashActivity.this);
                 String username = preferences.getString(StaticData.PREF_USERNAME, null);
                 String password = preferences.getString(StaticData.PREF_PASSWORD, null);
                 if (username==null || password==null) {
                     startStartUpActivity();
                 } else {
-
                     CVUser.logInInBackground(username, password, new LogInCallback() {
                         @Override
                         public void done(ParseUser user, ParseException e) {
                             Log.d(TAG, "done() called with: " + "user = [" + user.getUsername() + "], e = [" + e + "]");
                             if (e == null){
-
-
                                 ParseQuery<CVEmployee> employeeParseQuery = ParseQuery.getQuery(CVEmployee.class);
-                                employeeParseQuery.whereEqualTo("user", user);
+//                                employeeParseQuery.whereEqualTo("user", user);
                                 employeeParseQuery.findInBackground(new FindCallback<CVEmployee>() {
                                     @Override
                                     public void done(List<CVEmployee> objects, ParseException e) {
@@ -69,12 +65,11 @@ public class SplashActivity extends AppCompatActivity {
                                         if (objects.size() == 0){
                                             Intent invitationIntent = new Intent(SplashActivity.this, AcceptInvitationActivity.class);
                                             startActivity(invitationIntent);
-                                        }else {
-
+                                        } else {
                                             String roleName = objects.get(0).getCompany().getObjectId() + "_"
                                                     + objects.get(0).getRole();
                                             ParseQuery.getQuery(ParseRole.class)
-                                                    .whereEqualTo("name", roleName)
+//                                                    .whereEqualTo("name", roleName)
                                                     .findInBackground(new FindCallback<ParseRole>() {
                                                         @Override
                                                         public void done(List<ParseRole> objects, ParseException e) {

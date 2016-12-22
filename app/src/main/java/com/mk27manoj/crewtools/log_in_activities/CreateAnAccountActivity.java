@@ -1,11 +1,15 @@
 package com.mk27manoj.crewtools.log_in_activities;
 
+import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
+
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -49,12 +53,14 @@ public class CreateAnAccountActivity extends Activity {
     protected void onResume() {
         super.onResume();
         CommonUtilities.hideKeyBoard(mContext);
-
-
     }
 
     @Override
     public void onBackPressed() {
+    }
+    
+    private boolean isEmailValid(String email) {
+        return email.contains("@");
     }
 
     private void initViews() {
@@ -72,28 +78,64 @@ public class CreateAnAccountActivity extends Activity {
                 user.setEmail(email);
                 user.setUsername(username);
                 user.setPassword(password);
+                
+                // Check for a valid email address.
+                if (TextUtils.isEmpty(email)) {
+                    AlertDialog.Builder dialog = new AlertDialog.Builder(mContext);
+                    dialog.setIcon(R.mipmap.ic_launcher)
+                        .setTitle("Account Creation Error")
+                        .setMessage("Please enter your email. Press ok if you would like to enter your email.")
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                ((EditText)findViewById(R.id.editTextCreateEmail)).setText("");
+                            }
+                        })
+                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                finish();
+                            }
+                        })
+                    .show();
+                } else if (!isEmailValid(email)) {
+                    AlertDialog.Builder dialog = new AlertDialog.Builder(mContext);
+                    dialog.setIcon(R.mipmap.ic_launcher)
+                        .setTitle("Account Creation Error")
+                        .setMessage("Please double check your email. Press ok if you would like to reenter your email.")
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                ((EditText)findViewById(R.id.editTextCreateEmail)).setText("");
+                            }
+                        })
+                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                finish();
+                            }
+                        })
+                    .show();
+                } else {
+                    user.signUpInBackground(new SignUpCallback() {
+                        @Override
+                        public void done(ParseException e) {
+                            if (e == null){
+                                user.logInInBackground(username, password);
+                                SharedPreferences preferences = PreferenceManager
+                                        .getDefaultSharedPreferences(CreateAnAccountActivity.this);
+                                SharedPreferences.Editor editor = preferences.edit();
 
-
-                user.signUpInBackground(new SignUpCallback() {
-                    @Override
-                    public void done(ParseException e) {
-                        if (e == null){
-                            user.logInInBackground(username, password);
-                            SharedPreferences preferences = PreferenceManager
-                                    .getDefaultSharedPreferences(CreateAnAccountActivity.this);
-                            SharedPreferences.Editor editor = preferences.edit();
-
-                            editor.putString(StaticData.PREF_USERNAME, username)
-                                    .putString(StaticData.PREF_PASSWORD, password)
-                                    .apply();
-                            startActivity(new Intent(mContext, AcceptInvitationActivity.class));
-
-                        } else {
-                            Log.e(TAG, "SignUpInBackground: ", e);
+                                editor.putString(StaticData.PREF_USERNAME, username)
+                                        .putString(StaticData.PREF_PASSWORD, password)
+                                        .apply();
+                                startActivity(new Intent(mContext, AcceptInvitationActivity.class));
+                            } else {
+                                Log.e(TAG, "SignUpInBackground: ", e);
+                            }
                         }
-                    }
-                });
-
+                    });
+                }
             }
         });
         imgBack = (ImageView) findViewById(R.id.imageview_create_an_account_left_arrow);

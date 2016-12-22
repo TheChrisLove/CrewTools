@@ -63,7 +63,8 @@ public class ClientsFragment extends Fragment {
 
 
         ParseQuery<CVClient> query = ParseQuery.getQuery(CVClient.class);
-        query.whereMatchesKeyInQuery("company", "company", ParseQuery.getQuery(CVEmployee.class).whereEqualTo("user", CVUser.getCurrentUser()));
+        query.whereMatchesKeyInQuery("company", "company", ParseQuery.getQuery(CVEmployee.class));
+//                                     .whereEqualTo("user", CVUser.getCurrentUser()));
         query.findInBackground(new FindCallback<CVClient>() {
             @Override
             public void done(List<CVClient> objects, ParseException e) {

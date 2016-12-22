@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/fontColorGray"
+    tools:targetApi="21"
     tools:context="com.mk27manoj.crewtools.calendar.add_task.AddTaskActivity">
 
     <android.support.v7.widget.Toolbar xmlns:local="http://schemas.android.com/apk/res-auto"

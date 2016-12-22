@@ -7,6 +7,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
@@ -41,6 +42,13 @@ public class JobListFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflating view layout
         parentView = inflater.inflate(R.layout.fragment_jobs, container, false);
+        
+        viewPager = (ViewPager) parentView.findViewById(R.id.viewpager_jobs_viewpager);
+        setupViewPager(viewPager);
+        
+        tabLayout = (TabLayout) parentView.findViewById(R.id.tablayout_jobs_tabs);
+        tabLayout.setupWithViewPager(viewPager, true);
+        
         initViews();
         setListeners();
         return parentView;
@@ -48,10 +56,6 @@ public class JobListFragment extends Fragment {
 
     private void initViews() {
         mContext = getActivity();
-        viewPager = (ViewPager) parentView.findViewById(R.id.viewpager_jobs_viewpager);
-        tabLayout = (TabLayout) parentView.findViewById(R.id.tablayout_jobs_tabs);
-        setupViewPager(viewPager);
-        tabLayout.setupWithViewPager(viewPager);
 
         Toolbar toolbar = (Toolbar) getActivity().findViewById(R.id.toolbar_home_top_activity);
 

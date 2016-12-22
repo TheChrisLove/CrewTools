@@ -9,6 +9,7 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -62,12 +63,10 @@ public class AccountFragment extends Fragment {
         return fragment;
     }
 
-
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_account, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.fragment_account, container, false);
+        return rootView;
     }
 
     @Override
@@ -185,8 +184,8 @@ public class AccountFragment extends Fragment {
 
         imgCancel.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                getActivity().finish();
+            public void onClick(View v) { 
+                if(isResumed()) { getActivity().finish(); }
             }
         });
 

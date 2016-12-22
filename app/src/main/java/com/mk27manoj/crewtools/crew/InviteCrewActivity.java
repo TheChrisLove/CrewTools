@@ -47,7 +47,6 @@ public class InviteCrewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_invite_crew);
         initViews();
-
     }
 
     private void initViews() {
@@ -91,14 +90,12 @@ public class InviteCrewActivity extends AppCompatActivity {
                 sixthTextView.setText("" +sixthNumber);
             }
 
-
             invitation.setCode(accessCode);
             for (CVEmployee employee : ParseQuery.getQuery(CVEmployee.class)
                     .whereEqualTo("user", ParseUser.getCurrentUser()).find()) {
                 employee.getCompany().fetch();
 
                 invitation.setCompany(employee.getCompany());
-
             }
            Date newDate = new Date( Calendar.getInstance().getTime().getTime() + (1000 *60 * 60*48 ));
             invitation.setExpires(newDate);
@@ -166,7 +163,7 @@ public class InviteCrewActivity extends AppCompatActivity {
                 TextView txtMessage = (TextView) promptView.findViewById(R.id.textview_custom_menu_dialog_message);
                 txtMessage.setText("Enter the name of the new item");
                 ListView menuList = (ListView) promptView.findViewById(R.id.listview_custom_menu_dialog_list);
-                final String[] values = new String[]{"admin", "manger", "member"};
+                final String[] values = new String[]{"Admin", "Manger", "Member"};
                 menuList.setAdapter(new ArrayAdapter<String>(mContext, android.R.layout.simple_list_item_1, android.R.id.text1, values));
                 menuList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override

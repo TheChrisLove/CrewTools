@@ -76,12 +76,12 @@
                     android:paddingBottom="@dimen/padding_medium"
                     android:paddingLeft="@dimen/padding_large"
                     android:paddingTop="@dimen/padding_medium"
-                    android:text="Licence"
+                    android:text="License"
                     android:textAppearance="?android:textAppearanceSmall"
                     android:textColor="@color/fontColorBlack" />
 
                 <EditText
-                    android:id="@+id/edittext_create_view_company_licence"
+                    android:id="@+id/edittext_create_view_company_license"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.6"

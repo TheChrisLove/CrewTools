@@ -15,11 +15,13 @@ import com.mk27manoj.crewtools.HomeActivity;
 import com.mk27manoj.crewtools.ParseSubClasses.CVEmployee;
 import com.mk27manoj.crewtools.R;
 import com.mk27manoj.crewtools.global_data.StaticData;
+import com.parse.GetCallback;
 import com.parse.FindCallback;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
+import com.parse.ParseObject;
 
 import java.util.List;
 
@@ -44,57 +46,113 @@ public class SignInActivity extends AppCompatActivity {
         if (((EditText)findViewById(R.id.editTextSignInPassword)) != null) {
             password = ((EditText)findViewById(R.id.editTextSignInPassword)).getText().toString();
         }
+        
+        // If the entered username has an @, assume it is an email
+        if (username.contains("@")) {
+            ParseQuery<ParseUser> query = ParseUser.getQuery();
+            query.whereEqualTo("email", username);
+            query.getFirstInBackground(new GetCallback<ParseUser>() {
+                public void done(ParseUser user, ParseException e) {
+                    if (user != null) {
+                        String actualUsername = user.getUsername();
+                        ParseUser.logInInBackground(actualUsername, password, new LogInCallback() {
+                            @Override
+                            public void done(ParseUser user, ParseException e) {
+                               dialog.cancel();
+                                if (e == null){
+                                    SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(SignInActivity.this);
+                                    SharedPreferences.Editor editor = preferences.edit();
 
-        ParseUser.logInInBackground(username, password, new LogInCallback() {
-            @Override
-            public void done(ParseUser user, ParseException e) {
-               dialog.cancel();
-                if (e == null){
-                    SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(SignInActivity.this);
-                    SharedPreferences.Editor editor = preferences.edit();
+                                    editor.putString(StaticData.PREF_USERNAME, username)
+                                            .putString(StaticData.PREF_PASSWORD, password)
+                                            .apply();
 
-                    editor.putString(StaticData.PREF_USERNAME, username)
-                            .putString(StaticData.PREF_PASSWORD, password)
-                            .apply();
-
-                    ParseQuery<CVEmployee> employeeParseQuery = ParseQuery.getQuery(CVEmployee.class);
-                    employeeParseQuery.findInBackground(new FindCallback<CVEmployee>() {
-                        @Override
-                        public void done(List<CVEmployee> objects, ParseException e) {
-                            if (objects == null){
-                                Intent invitationIntent = new Intent(SignInActivity.this, AcceptInvitationActivity.class);
-                                startActivity(invitationIntent);
-                            }else {
-                                Intent intent = new Intent(SignInActivity.this, HomeActivity.class);
-                                startActivity(intent);
+                                    ParseQuery<CVEmployee> employeeParseQuery = ParseQuery.getQuery(CVEmployee.class);
+                                    employeeParseQuery.findInBackground(new FindCallback<CVEmployee>() {
+                                        @Override
+                                        public void done(List<CVEmployee> objects, ParseException e) {
+                                            if (objects == null){
+                                                Intent invitationIntent = new Intent(SignInActivity.this, AcceptInvitationActivity.class);
+                                                startActivity(invitationIntent);
+                                            }else {
+                                                Intent intent = new Intent(SignInActivity.this, HomeActivity.class);
+                                                startActivity(intent);
+                                            }
+                                        }
+                                    });
+                                } else{
+                                    AlertDialog.Builder dialog = new AlertDialog.Builder(SignInActivity.this);
+                                    dialog.setIcon(R.mipmap.ic_launcher)
+                                            .setTitle("Log In Error")
+                                            .setMessage("Please double check your username and password. Press Ok if you would like to reenter your username and password.")
+                                            .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                                @Override
+                                                public void onClick(DialogInterface dialog, int which) {
+                                                    ((EditText)findViewById(R.id.editTextSignInName)).setText("");
+                                                    ((EditText)findViewById(R.id.editTextSignInPassword)).setText("");
+                                                }
+                                            })
+                                            .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                                                @Override
+                                                public void onClick(DialogInterface dialog, int which) {
+                                                    finish();
+                                                }
+                                            })
+                                            .show();
+                                }
                             }
-                        }
-                    });
-
-
-                } else{
-                    AlertDialog.Builder dialog = new AlertDialog.Builder(SignInActivity.this);
-                    dialog.setIcon(R.mipmap.ic_launcher)
-                            .setTitle("Log In Error")
-                            .setMessage("Please double check your username and password.  Press Ok if you would like to reenter your usernamen and password.")
-                            .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    ((EditText)findViewById(R.id.editTextSignInName)).setText("");
-                                    ((EditText)findViewById(R.id.editTextSignInPassword)).setText("");
-                                }
-                            })
-                            .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    finish();
-                                }
-                            })
-                            .show();
-
+                        });
+                    }
                 }
-            }
-        });
+            });
+        } else {
+            ParseUser.logInInBackground(username, password, new LogInCallback() {
+                @Override
+                public void done(ParseUser user, ParseException e) {
+                   dialog.cancel();
+                    if (e == null){
+                        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(SignInActivity.this);
+                        SharedPreferences.Editor editor = preferences.edit();
 
+                        editor.putString(StaticData.PREF_USERNAME, username)
+                                .putString(StaticData.PREF_PASSWORD, password)
+                                .apply();
+
+                        ParseQuery<CVEmployee> employeeParseQuery = ParseQuery.getQuery(CVEmployee.class);
+                        employeeParseQuery.findInBackground(new FindCallback<CVEmployee>() {
+                            @Override
+                            public void done(List<CVEmployee> objects, ParseException e) {
+                                if (objects == null){
+                                    Intent invitationIntent = new Intent(SignInActivity.this, AcceptInvitationActivity.class);
+                                    startActivity(invitationIntent);
+                                }else {
+                                    Intent intent = new Intent(SignInActivity.this, HomeActivity.class);
+                                    startActivity(intent);
+                                }
+                            }
+                        });
+                    } else{
+                        AlertDialog.Builder dialog = new AlertDialog.Builder(SignInActivity.this);
+                        dialog.setIcon(R.mipmap.ic_launcher)
+                                .setTitle("Log In Error")
+                                .setMessage("Please double check your username and password. Press Ok if you would like to reenter your username and password.")
+                                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        ((EditText)findViewById(R.id.editTextSignInName)).setText("");
+                                        ((EditText)findViewById(R.id.editTextSignInPassword)).setText("");
+                                    }
+                                })
+                                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        finish();
+                                    }
+                                })
+                                .show();
+                    }
+                }
+            });
+        }
     }
 }
