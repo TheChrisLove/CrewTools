@@ -13,13 +13,11 @@ import java.util.ArrayList;
 import java.util.Date;
 
 /**
- * Created by gyasistory on 6/17/2016.
+ * Renovated by The Chris Love on 12-21-2016.
  */
 
 @ParseClassName("CVCompany")
 public class CVCompany extends ParseObject{
-
-
 
     public String getBusiness() {
         return getString("business");
@@ -29,12 +27,12 @@ public class CVCompany extends ParseObject{
         put("business", business);
     }
 
-    public String getLicence() {
-        return getString("licence");
+    public String getLicense() {
+        return getString("license");
     }
 
-    public void setLicence(String licence) {
-        put("licence", licence);
+    public void setLicense(String license) {
+        put("license", license);
     }
 
     public int getBillingClientId() {
@@ -53,12 +51,12 @@ public class CVCompany extends ParseObject{
         put("primaryColor", primaryColor);
     }
 
-    public Date getLogoUpdated() {
-        return getDate("logoUpdated");
+    public Date getLogoUpdatedAt() {
+        return getDate("logoUpdatedAt");
     }
 
-    public void setLogoUpdated(Date logoUpdated) {
-        put("logoUpdated", logoUpdated);
+    public void setLogoUpdatedAt(Date logoUpdatedAt) {
+        put("logoUpdatedAt", logoUpdatedAt);
     }
 
     public ParseFile getWatermark() {
@@ -78,7 +76,7 @@ public class CVCompany extends ParseObject{
     }
 
     public JSONArray getServiceTypes() {
-        return  getJSONArray("serviceTypes");
+        return getJSONArray("serviceTypes");
     }
 
     public void setServiceTypes(JSONArray serviceTypes) {
@@ -188,7 +186,6 @@ public class CVCompany extends ParseObject{
     public void setWorkDayEnd(String workDayEnd) {
         put("workDayEnd", workDayEnd);
     }
-
 
     public String getState() {
         return getString("state");

@@ -10,7 +10,7 @@ import org.json.JSONObject;
 import java.util.Date;
 
 /**
- * Created by gyasistory on 6/17/16.
+ * Renovated by The Chris Love  on 12-21-2016.
  */
 @ParseClassName("CVPayment")
 public class CVPayment extends ParseObject {

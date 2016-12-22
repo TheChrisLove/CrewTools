@@ -42,7 +42,6 @@ public class AccountInfoActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         txtTitle = (TextView) findViewById(R.id.textview_toolbar_account_info_title);
 
-
         infoContainer = (LinearLayout) findViewById(R.id.linearlayout_account_info_container);
 
         role = getIntent().getExtras().getString("ROLE");

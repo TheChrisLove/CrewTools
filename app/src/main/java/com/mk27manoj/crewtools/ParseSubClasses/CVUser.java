@@ -5,11 +5,10 @@ import com.parse.ParseException;
 import com.parse.ParseUser;
 
 /**
- * Created by gyasistory on 6/17/2016.
+ * Renovated by The Chris Love on 12-21-2016.
  */
 @ParseClassName("User")
 public class CVUser extends ParseUser {
-
 
     public String getName() {
         try {

@@ -37,7 +37,7 @@ public class CreateViewCompanyFragment extends Fragment {
     private Context mContext;
     private View parentView;
     private TextView txtEditDone, txtTitle;
-    private EditText edtName, edtLicence, edtMotto, edtPhone, edtWebsite, edtWorkHours, edtStreetAddress, edtSuiteApt, edtCity, edtState, edtZip;
+    private EditText edtName, edtLicense, edtMotto, edtPhone, edtWebsite, edtWorkHours, edtStreetAddress, edtSuiteApt, edtCity, edtState, edtZip;
     private boolean isEnable = false;
     private Button btnSave;
     private RelativeLayout relativeAddService;
@@ -83,8 +83,8 @@ public class CreateViewCompanyFragment extends Fragment {
 
         edtName = (EditText) getActivity().findViewById(R.id.edittext_create_view_company_name);
         edtName.setText(mCompany.getBusiness());
-        edtLicence = (EditText) getActivity().findViewById(R.id.edittext_create_view_company_licence);
-        edtLicence.setText(mCompany.getLicence());
+        edtLicense = (EditText) getActivity().findViewById(R.id.edittext_create_view_company_license);
+        edtLicense.setText(mCompany.getLicense());
         edtMotto = (EditText) getActivity().findViewById(R.id.edittext_create_view_company_motto);
         edtMotto.setText(mCompany.getMotto());
         edtPhone = (EditText) getActivity().findViewById(R.id.edittext_create_view_company_phone);
@@ -149,7 +149,7 @@ public class CreateViewCompanyFragment extends Fragment {
             public void onClick(View v) {
                 try {
                     mCompany.setBusiness(edtName.getText().toString());
-                    mCompany.setLicence(edtLicence.getText().toString());
+                    mCompany.setLicense(edtLicense.getText().toString());
                     mCompany.setMotto(edtMotto.getText().toString());
                     mCompany.setPhone(edtPhone.getText().toString());
                     mCompany.setWebsite(edtWebsite.getText().toString());
@@ -189,7 +189,7 @@ public class CreateViewCompanyFragment extends Fragment {
                 }
                 isEnable = !isEnable;
                 edtName.setEnabled(isEnable);
-                edtLicence.setEnabled(isEnable);
+                edtLicense.setEnabled(isEnable);
                 edtMotto.setEnabled(isEnable);
                 edtPhone.setEnabled(isEnable);
                 edtWebsite.setEnabled(isEnable);
