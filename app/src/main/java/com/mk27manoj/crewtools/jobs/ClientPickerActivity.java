@@ -82,9 +82,10 @@ public class ClientPickerActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-
-        for (int i = 0; i < clients.size(); i++) {
-            addView();
+        if(clients.size() > 0){
+            for (int i = 0; i < clients.size(); i++) {
+                addView();
+            }
         }
 
 //        clientContainer.setOnClickListener(new View.OnClickListener() {

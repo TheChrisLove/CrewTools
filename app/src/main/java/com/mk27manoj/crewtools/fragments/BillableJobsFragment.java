@@ -21,15 +21,18 @@ import com.parse.ParseException;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
+import java.util.ArrayList;
 import java.util.List;
-
 /**
  * Renovated by The Chris Love on 10-31-2016.
  */
 public class BillableJobsFragment extends Fragment {
     private Context mContext;
     private View parentView;
+    private ListView mListView;
+    private ArrayList<String> jobsList;
     private static final String TAG = "BillableJobsFragment";
+    List<CVJob> mJobs;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -47,9 +50,35 @@ public class BillableJobsFragment extends Fragment {
 
     private void initViews() {
         mContext = getActivity();
+        mListView = (ListView) parentView.findViewById(R.id.listView_billable_jobs);
+
+        ParseQuery<CVJob> query = ParseQuery.getQuery(CVJob.class).whereNotEqualTo("invoiced", null);
+//        query.whereEqualTo("user", ParseUser.getCurrentUser());
+            
+        query.findInBackground(new FindCallback<CVJob>() {
+            @Override
+            public void done(List<CVJob> objects, ParseException e) {
+                Log.d(TAG, "Opened Jobs Fragment: done() called with: " + "objects = [" + objects + "], e = [" + e + "]");
+                if (e == null) {
+                    mListView.setAdapter(new JobsAdapter(getContext(), objects));
+                }
+            }
+        });
     }
 
     private void setListeners() {
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                CVJob job = (CVJob) parent.getAdapter().getItem(position);
+
+                if (job != null) {
+                    Intent intent = new Intent(getActivity(), JobsActivity.class);
+                    intent.putExtra("Job", job.getObjectId());
+                    startActivity(intent);
+                }
+            }
+        });
     }
 
     @Override

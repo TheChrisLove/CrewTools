@@ -33,7 +33,6 @@ public class CalenderFragment extends Fragment {
     private ViewPager viewPager;
     public static final String TAG = "CalenderFragment";
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

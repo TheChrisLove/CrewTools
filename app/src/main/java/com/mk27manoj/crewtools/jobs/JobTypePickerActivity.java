@@ -54,21 +54,18 @@ public class JobTypePickerActivity extends AppCompatActivity {
     private void initViews() {
         mContext = JobTypePickerActivity.this;
         mToolbar = (Toolbar) findViewById(R.id.toolbar_job_type_picker_top);
-
-
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         txtTitle = (TextView) findViewById(R.id.textview_toolbar_job_type_picker_title);
 
         txtTitle.setText("CHOOSE JOB TYPE");
 
-
         try {
-            for (CVEmployee cvEmployee : ParseQuery.getQuery(CVEmployee.class).whereEqualTo("user", ParseUser.getCurrentUser()).find()) {
+//            for (CVEmployee cvEmployee : ParseQuery.getQuery(CVEmployee.class).whereEqualTo("user", ParseUser.getCurrentUser()).find()) {
+            for (CVEmployee cvEmployee : ParseQuery.getQuery(CVEmployee.class).find()) {
                 cvEmployee.getCompany().fetch();
                 cvCompany = cvEmployee.getCompany();
                 jsonArray = cvEmployee.getCompany().getServiceTypes();
-
             }
         } catch (ParseException e) {
             e.printStackTrace();
@@ -76,8 +73,10 @@ public class JobTypePickerActivity extends AppCompatActivity {
 
 
         jobTypeContainer = (LinearLayout) findViewById(R.id.linearlayout_job_type_picker_type_container);
-        for (int i = 0; i < jsonArray.length(); i++) {
-            addView(false);
+        if(jsonArray != null){
+            for (int i = 0; i < jsonArray.length(); i++) {
+                addView(false);
+            }
         }
 
         txtEdit = (TextView) findViewById(R.id.textview_toolbar_job_type_picker_edit);
@@ -102,7 +101,6 @@ public class JobTypePickerActivity extends AppCompatActivity {
                 btnAdd.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
                         if (!userInput.getText().toString().trim().equals("")) {
-
                             jsonArray.put(userInput.getText().toString());
                             cvCompany.setServiceTypes(jsonArray);
                             cvCompany.saveEventually();

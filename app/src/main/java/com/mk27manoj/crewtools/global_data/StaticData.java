@@ -1,7 +1,7 @@
 package com.mk27manoj.crewtools.global_data;
 
 /**
- * Created by gyasistory on 6/17/16.
+ * Renovated by The Chris Love  on 12-21-2016.
  */
 public class StaticData {
 

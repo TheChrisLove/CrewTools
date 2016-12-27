@@ -74,7 +74,7 @@ android:id="@+id/myaccount_container"
             android:weightSum="3">
 
             <LinearLayout
-                android:id="@+id/linealayout_my_account_menu_jobs"
+                android:id="@+id/linearlayout_my_account_menu_jobs"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -99,7 +99,7 @@ android:id="@+id/myaccount_container"
 
 
             <LinearLayout
-                android:id="@+id/linealayout_my_account_menu_calender"
+                android:id="@+id/linearlayout_my_account_menu_calendar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

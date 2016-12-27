@@ -131,7 +131,7 @@ public class HomeActivity extends AppCompatActivity {
         linearCalenderLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                txtTitle.setText("CALENDER");
+                txtTitle.setText(R.string.calendar);
 
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

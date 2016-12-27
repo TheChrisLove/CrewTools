@@ -15,6 +15,7 @@ import android.widget.CheckedTextView;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -51,10 +52,12 @@ public class ViewTaskActivity extends AppCompatActivity implements DatePickerFra
     private CVEmployee[] mCVEmployees;
     
     private static final String TAG = "ViewTaskActivity";
+    private boolean isEnable = false;
     private Boolean AllDay = true;
-//    private EditText taskName = (EditText) findViewById(R.id.editText_add_task_name);
+    private TextView txtTitle, txtEditDone;
+    private ImageView imgCancel;
     private CVAddress mAddress = new CVAddress();
-//    private JSONArray mCVEmployeesJSONArray = new JSONArray();
+    private JSONArray mCVEmployeesJSONArray = new JSONArray();
     private List<CVEmployee> mQueryEmployeeList;
     private ArrayList<CVEmployee> mEmployeeList = new ArrayList<>();
     ArrayAdapter<CVEmployee> adapter;
@@ -66,51 +69,87 @@ public class ViewTaskActivity extends AppCompatActivity implements DatePickerFra
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_task);
         
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_add_task);
+        Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar_view_task_top);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        txtTitle = (TextView) findViewById(R.id.textview_toolbar_view_task_title);
 
-        setSupportActionBar(toolbar);
-
-        TextView toolbarTextview = (TextView) findViewById(R.id.textview_toolbar_add_task);
-        if (toolbarTextview != null) {
-            toolbarTextview.setText(getResources().getString(R.string.add_task));
-        }
+        txtTitle.setText("VIEW TASK");
         
-//        ParseQuery.getQuery(CVEmployee.class)
-//                .findInBackground(new FindCallback<CVEmployee>() {
-//                    @Override
-//                    public void done(List<CVEmployee> objects, ParseException e) {
-//                        if (e == null) {
-//                            mQueryEmployeeList = objects;
-//                            LinearLayout employeeLayout = (LinearLayout) findViewById(R.id.linearLayout_add_task_employee);
-//
-//                            for (int i = 0; i < mQueryEmployeeList.size(); i++) {
-//                                CheckedTextView employeeTextView = (CheckedTextView) LayoutInflater.from(ViewTaskActivity.this).inflate(R.layout.layout_checked_text, employeeLayout, false);
-//                                employeeTextView.setId(i);
-//                                employeeTextView.setText(mQueryEmployeeList.get(i).toString());
-//                                if (employeeLayout != null) {
-//                                    employeeLayout.addView(employeeTextView, i);
-//                                }
-//                                employeeTextView.setOnClickListener(new View.OnClickListener() {
-//                                    @Override
-//                                    public void onClick(View v) {
-//                                        Log.d(TAG, "onClick() called with: " + "v = [" + v.getId() + "]" + ((CheckedTextView) v).isChecked());
-//                                        if (((CheckedTextView) v).isChecked()) {
-//                                            mEmployeeList.remove(mQueryEmployeeList.get(v.getId()));
-//                                            ((CheckedTextView) v).setChecked(false);
-//                                        } else {
-//                                            mEmployeeList.add(mQueryEmployeeList.get(v.getId()));
-//                                            ((CheckedTextView) v).setChecked(true);
-//                                        }
-//                                    }
-//                                });
-//                            }
-//                        }
-//                    }
-//                });
+        txtEditDone = (TextView) mToolbar.findViewById(R.id.textview_toolbar_view_task_done);
+        txtEditDone.setVisibility(View.VISIBLE);
+
+        txtEditDone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!isEnable) {
+                    txtEditDone.setText("Done");
+//                    imgCancel.setVisibility(View.GONE);
+//                    txtCancel.setVisibility(View.VISIBLE);
+                } else {
+                    txtEditDone.setText("Edit");
+//                    imgCancel.setVisibility(View.VISIBLE);
+//                    txtCancel.setVisibility(View.GONE);
+                }
+//                isEnable = !isEnable;
+//                edtName.setEnabled(isEnable);
+//                txtType.setEnabled(isEnable);
+//                txtClient.setEnabled(isEnable);
+//                txtPlace.setEnabled(isEnable);
+//                txtOccurance.setEnabled(isEnable);
+//                txtPriority.setEnabled(isEnable);
+//                txtStartingDate.setEnabled(isEnable);
+//                txtCompletionDate.setEnabled(isEnable);
+//                txtPayment.setEnabled(isEnable);
+//                txtAcceptWithin.setEnabled(isEnable);
+//                edtDescription.setEnabled(isEnable);
+            }
+        });
+
+        imgCancel = (ImageView) findViewById(R.id.imageview_toolbar_view_task_menu_close);
+        imgCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        
+        ParseQuery.getQuery(CVEmployee.class)
+                .findInBackground(new FindCallback<CVEmployee>() {
+                    @Override
+                    public void done(List<CVEmployee> objects, ParseException e) {
+                        if (e == null) {
+                            mQueryEmployeeList = objects;
+                            LinearLayout employeeLayout = (LinearLayout) findViewById(R.id.linearLayout_add_task_employee);
+
+                            for (int i = 0; i < mQueryEmployeeList.size(); i++) {
+                                CheckedTextView employeeTextView = (CheckedTextView) LayoutInflater.from(ViewTaskActivity.this).inflate(R.layout.layout_checked_text, employeeLayout, false);
+                                employeeTextView.setId(i);
+                                employeeTextView.setText(mQueryEmployeeList.get(i).toString());
+                                if (employeeLayout != null) {
+                                    employeeLayout.addView(employeeTextView, i);
+                                }
+                                employeeTextView.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        Log.d(TAG, "onClick() called with: " + "v = [" + v.getId() + "]" + ((CheckedTextView) v).isChecked());
+                                        if (((CheckedTextView) v).isChecked()) {
+                                            mEmployeeList.remove(mQueryEmployeeList.get(v.getId()));
+                                            ((CheckedTextView) v).setChecked(false);
+                                        } else {
+                                            mEmployeeList.add(mQueryEmployeeList.get(v.getId()));
+                                            ((CheckedTextView) v).setChecked(true);
+                                        }
+                                    }
+                                });
+                            }
+                        }
+                    }
+                });
 
         if (getIntent() != null){
             Intent sentIntent = getIntent();
-//            Toast.makeText(ViewTaskActivity.this, "The Id is " + sentIntent.getStringExtra(TASK_OBJECT_ID), Toast.LENGTH_SHORT).show();
+ //           Toast.makeText(ViewTaskActivity.this, "The Id is " + sentIntent.getStringExtra(TASK_OBJECT_ID), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -213,71 +252,67 @@ public class ViewTaskActivity extends AppCompatActivity implements DatePickerFra
 
     @Override
     public void locationSelected(CVAddress address) {
-
         mAddress = address;
-
         TextView addTaskPlaceTextView = (TextView) findViewById(R.id.TextView_add_task_place);
-
         addTaskPlaceTextView.setText(address.toString());
-
     }
 
     public void saveChangesClick(View view) {
         if (mParseObjects != null) {
             if (mEmployeeList.size() > 0) {
-//                ParseQuery.getQuery(ParseRole.class)
-//                        .whereContains("name", mEmployeeList.get(0).getCompany().getObjectId())
-//                        .findInBackground(new FindCallback<ParseRole>() {
-//                            @Override
-//                            public void done(List<ParseRole> objects, ParseException e) {
-//                                if (e == null) {
-//                                    CVTask task = new CVTask();
-//                                    ParseACL acl = new ParseACL();
-//                                    task.setACL(acl);
-//                                    task.getACL().setPublicReadAccess(false);
-//                                    task.getACL().setPublicWriteAccess(false);
-//                                    CVUser.getCurrentUser().getACL().setPublicReadAccess(true);
-//                                    CVUser.getCurrentUser().getACL().setPublicWriteAccess(true);
-//                                    task.setACL(CVUser.getCurrentUser().getACL());
-//                                    for (ParseRole object : objects) {
-//                                        object.getACL().setPublicWriteAccess(true);
-//                                        object.getACL().setPublicReadAccess(true);
-//                                        task.setACL(object.getACL());
-//                                    }
-//
-//                                    task.setCompany(mEmployeeList.get(0).getCompany());
-//                                    TextView etNote = (TextView) findViewById(R.id.editText_add_task_note);
-//                                    EditText etName = (EditText) findViewById(R.id.editText_add_task_name);
-//                                    if (etNote != null) {
-//                                        task.setNotes(etNote.getText().toString());
-//                                    }
-//                                    if (etName != null) {
-//                                        task.setName(etName.getText().toString());
-//                                    }
-////                                    task.setItems(mParseObjects);
-//                                    task.setLocation(mAddress);
-//                                    Spinner prioritySpinner = (Spinner) findViewById(R.id.spinner_add_task_priority);
-//                                    if (prioritySpinner != null) {
-//                                        task.setPriority(prioritySpinner.getSelectedItemPosition() + 1);
-//                                    }
-//                                    task.setDate(mDate);
-//                                    task.setAllDay(AllDay);
-//                                    for (CVEmployee cvEmployee : mEmployeeList) {
-////                                        mCVEmployeesJSONArray.put(cvEmployee);
-//                                    }
-////                                    task.setEmployees(mCVEmployeesJSONArray);
-//                                    task.saveEventually(new SaveCallback() {
-//                                        @Override
-//                                        public void done(ParseException e) {
-//                                            if (e == null) {
-//                                                Log.d(TAG, "saveChangesClick:  ");
-//                                                finish();
-//                                            }
-//                                        }
-//                                    });
-//                                }
-//                            }
-//                        });
+                ParseQuery.getQuery(ParseRole.class)
+                        .whereContains("name", mEmployeeList.get(0).getCompany().getObjectId())
+                        .findInBackground(new FindCallback<ParseRole>() {
+                            @Override
+                            public void done(List<ParseRole> objects, ParseException e) {
+                                if (e == null) {
+                                    CVTask task = new CVTask();
+                                    ParseACL acl = new ParseACL();
+                                    task.setACL(acl);
+                                    task.getACL().setPublicReadAccess(false);
+                                    task.getACL().setPublicWriteAccess(false);
+                                    CVUser.getCurrentUser().getACL().setPublicReadAccess(true);
+                                    CVUser.getCurrentUser().getACL().setPublicWriteAccess(true);
+                                    task.setACL(CVUser.getCurrentUser().getACL());
+                                    for (ParseRole object : objects) {
+                                        object.getACL().setPublicWriteAccess(true);
+                                        object.getACL().setPublicReadAccess(true);
+                                        task.setACL(object.getACL());
+                                    }
+
+                                    task.setCompany(mEmployeeList.get(0).getCompany());
+                                    TextView etNote = (TextView) findViewById(R.id.editText_add_task_note);
+                                    EditText etName = (EditText) findViewById(R.id.editText_add_task_name);
+                                    if (etNote != null) {
+                                        task.setNotes(etNote.getText().toString());
+                                    }
+                                    if (etName != null) {
+                                        task.setName(etName.getText().toString());
+                                    }
+//                                    task.setItems(mParseObjects);
+                                    task.setLocation(mAddress);
+                                    Spinner prioritySpinner = (Spinner) findViewById(R.id.spinner_add_task_priority);
+                                    if (prioritySpinner != null) {
+                                        task.setPriority(prioritySpinner.getSelectedItemPosition() + 1);
+                                    }
+                                    task.setDate(mDate);
+                                    task.setAllDay(AllDay);
+                                    for (CVEmployee cvEmployee : mEmployeeList) {
+//                                        mCVEmployeesJSONArray.put(cvEmployee);
+                                    }
+//                                    task.setEmployees(mCVEmployeesJSONArray);
+                                    task.saveEventually(new SaveCallback() {
+                                        @Override
+                                        public void done(ParseException e) {
+                                            if (e == null) {
+                                                Log.d(TAG, "saveChangesClick:  ");
+                                                finish();
+                                            }
+                                        }
+                                    });
+                                }
+                            }
+                        });
             } else {
                 // No Employee
                 Toast.makeText(ViewTaskActivity.this, "No Employee Selected", Toast.LENGTH_LONG).show();

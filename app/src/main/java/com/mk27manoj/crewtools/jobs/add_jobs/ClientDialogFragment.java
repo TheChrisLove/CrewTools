@@ -79,7 +79,7 @@ public class ClientDialogFragment extends DialogFragment implements TextView.OnE
                         if (e == null) {
                             for (CVEmployee object : objects) {
                                 ParseQuery.getQuery(CVClient.class)
-                                        .whereEqualTo("company", object.getCompany())
+//                                        .whereEqualTo("company", object.getCompany())
                                         .findInBackground(new FindCallback<CVClient>() {
                                             @Override
                                             public void done(List<CVClient> objects, ParseException e) {

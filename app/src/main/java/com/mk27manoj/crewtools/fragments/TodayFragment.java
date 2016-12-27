@@ -3,6 +3,7 @@ package com.mk27manoj.crewtools.fragments;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,6 +34,7 @@ public class TodayFragment extends Fragment {
     private View parentView;
     private ListView mListView;
     private ArrayList<String> todayEventList;
+    private static final String TAG = "TodayFragment";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -51,13 +53,35 @@ public class TodayFragment extends Fragment {
     private void initViews() {
         mContext = getActivity();
         mListView = (ListView) parentView.findViewById(R.id.listview_today_list);
-
-
+        
+        ParseQuery<CVTask> query = ParseQuery.getQuery(CVTask.class);
+//        query.whereEqualTo("user", ParseUser.getCurrentUser());
+            
+        query.findInBackground(new FindCallback<CVTask>() {
+            @Override
+            public void done(List<CVTask> objects, ParseException e) {
+                Log.d(TAG, "Today's tasks: done() called with: " + "objects = [" + objects + "], e = [" + e + "]");
+                if (e == null) {
+                    mListView.setAdapter(new CalenderEventsAdapter(getContext(), objects));
+                }
+            }
+        });
     }
 
     private void setListeners() {
-    }
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                CVTask task = (CVTask) parent.getAdapter().getItem(position);
 
+                if (task != null) {
+                    Intent intent = new Intent(getActivity(), ViewTaskActivity.class);
+                    intent.putExtra("task_object_id", task.getObjectId());
+                    startActivity(intent);
+                }
+            }
+        });
+    }
 
     @Override
     public void onResume() {

@@ -53,7 +53,6 @@ public class ClientsFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflating view layout
         parentView = inflater.inflate(R.layout.fragment_clients, container, false);
-
         return parentView;
     }
 
@@ -81,12 +80,10 @@ public class ClientsFragment extends Fragment {
     }
 
     private void setListeners() {
-
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 CVClient client = (CVClient) parent.getAdapter().getItem(position);
-
                 if (client != null) {
                     Intent intent = new Intent(getActivity(), ClientActivity.class);
                     intent.putExtra("client", client.getName());
@@ -102,8 +99,6 @@ public class ClientsFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         initViews();
         setListeners();
-
-
     }
 
     @Override

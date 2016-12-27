@@ -79,7 +79,7 @@ public class MyAccountActivity extends AppCompatActivity {
         //}
 
 
-        linearJobsLayout = (LinearLayout) findViewById(R.id.linealayout_my_account_menu_jobs);
+        linearJobsLayout = (LinearLayout) findViewById(R.id.linearlayout_my_account_menu_jobs);
         linearJobsLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -106,15 +106,12 @@ public class MyAccountActivity extends AppCompatActivity {
                     fragment = new JobListFragment();
                 }
                 getSupportFragmentManager().beginTransaction().replace(R.id.myaccount_container, fragment, JobListFragment.TAG).commit();
-
-
             }
         });
-        linearCalenderLayout = (LinearLayout) findViewById(R.id.linealayout_my_account_menu_calender);
+        linearCalenderLayout = (LinearLayout) findViewById(R.id.linearlayout_my_account_menu_calendar);
         linearCalenderLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 // set Toolbar text
                 mTextViewToolbarText.setText(R.string.calendar);
 

@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fontColorGray"
+    tools:context="com.mk27manoj.crewtools.calendar.ViewTaskActivity">
+
+        <android.support.v7.widget.Toolbar xmlns:local="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/toolbar_view_task_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorGrayTitleBar"
+            android:minHeight="?attr/actionBarSize"
+            local:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                
+                <ImageView
+                android:id="@+id/imageview_toolbar_view_task_menu_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_close" />
+
+                <TextView
+                    android:id="@+id/textview_toolbar_view_task_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center_horizontal"
+                    android:text="VIEW TASK"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/fontColorBlack"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textview_toolbar_add_client"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="@dimen/margin_medium"
+                    android:gravity="center_horizontal"
+                    tools:text="Add Text"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textStyle="bold" />
+            
+            </RelativeLayout>
+        </android.support.v7.widget.Toolbar>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/scrollView"
+            android:layout_marginBottom="25dp"
+            android:layout_below="@+id/toolbar_add_client"
+            android:layout_above="@+id/button_crew_sign_out">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginBottom="25dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="25dp"
+                    android:text="PERSONAL"
+                    android:layout_marginLeft="10dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/light_grey_background"
+                    android:elevation="5dp"
+                    android:orientation="vertical"
+
+                    android:padding="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight=".2"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".25"
+                            android:gravity="bottom|left"
+                            android:text="@string/task"
+                            android:textAppearance="?android:textAppearanceSmall"
+                            android:textColor="@color/fontColorBlack"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/editText_add_task_name"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".75"
+                            android:gravity="right"
+                            android:hint="@string/task"
+                            android:textColor="@color/textColor" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight=".2"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".25"
+                            android:gravity="bottom|left"
+                            android:text="@string/for_text"
+                            android:textAppearance="?android:textAppearanceSmall"
+                            android:textColor="@color/fontColorBlack"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/editText_add_job_type"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".75"
+                            android:gravity="right"
+                            android:text="@string/none"
+                            android:onClick="addTaskObjectClick"
+                            android:textColor="@color/textColor" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight=".2"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".25"
+                            android:gravity="bottom|left"
+                            android:text="@string/client"
+                            android:textAppearance="?android:textAppearanceSmall"
+                            android:textColor="@color/fontColorBlack"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/Textview_add_job_client"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".75"
+                            android:gravity="right"
+                            android:hint="@string/type"
+                            android:onClick="addJobClientClick"
+                            android:textColor="@color/textColor" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight=".2"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".25"
+                            android:gravity="bottom|left"
+                            android:text="@string/place"
+                            android:textAppearance="?android:textAppearanceSmall"
+                            android:textColor="@color/fontColorBlack"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/editText_add_job_place"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".75"
+                            android:gravity="right"
+                            android:hint="@string/place"
+                            android:textColor="@color/textColor" />
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textViewclientAddAddresse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="25dp"
+                    android:text="@string/services"
+                    android:layout_marginLeft="10dp" />
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/light_grey_background"
+                    android:elevation="5dp"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+                    <ListView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/listview_add_job_services"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingBottom="5dp"
+                        android:layout_weight="1"
+                        android:paddingTop="5dp"
+                        android:onClick="addJobServiceClick">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:background="@mipmap/ic_green_circle"
+                            android:padding="10dp"
+                            android:src="@drawable/ic_add" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:paddingLeft="15dp"
+                            android:text="@string/add_services"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            tools:text="Tax@6%"
+                            android:id="@+id/textView_add_job_tax"
+                            android:layout_weight=".75"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:textColor="@color/textColor"
+                            tools:text="$0.00"
+                            android:layout_weight=".25"/>
+                    </LinearLayout>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="5dp"
+                        android:background="@color/fontColorBlack"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/total"
+                            android:layout_weight=".75"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:textColor="@color/textColor"
+                            tools:text="$0.00"
+                            android:layout_weight=".25"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="25dp"
+                    android:text="@string/timeframe"
+                    android:layout_marginLeft="10dp" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/light_grey_background"
+                    android:elevation="5dp"
+                    android:onClick="addEmailClick"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight=".2"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".25"
+                            android:gravity="bottom|left"
+                            android:text="@string/perform_this_job"
+                            android:textAppearance="?android:textAppearanceSmall"
+                            android:textColor="@color/fontColorBlack"
+                            android:textStyle="bold" />
+
+                        <Spinner
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".75"
+                            android:textDirection="rtl"
+                            android:entries="@array/occurrence_picker"
+                            android:gravity="right"
+                            android:hint="Name"
+                            android:textColor="@color/textColor"
+                            android:spinnerMode="dialog"
+                            android:id="@+id/spinner_add_perform" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight=".2"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".25"
+                            android:gravity="bottom|left"
+                            android:text="@string/priority"
+                            android:textAppearance="?android:textAppearanceSmall"
+                            android:textColor="@color/fontColorBlack"
+                            android:textStyle="bold" />
+
+                        <Spinner
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".75"
+                            android:textDirection="rtl"
+                            android:entries="@array/priority_picker"
+                            android:gravity="right"
+                            android:hint="Name"
+                            android:textColor="@color/textColor"
+                            android:spinnerMode="dialog"
+                            android:id="@+id/spinner_add_job_priority" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight=".2"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".25"
+                            android:gravity="bottom|left"
+                            android:text="@string/starting_date"
+                            android:textAppearance="?android:textAppearanceSmall"
+                            android:textColor="@color/fontColorBlack"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView_add_job_start_date"
+                            android:onClick="addJobDateStartClick"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".75"
+                            android:gravity="right"
+                            android:hint="@string/not_set"
+                            android:textColor="@color/textColor" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight=".2"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".25"
+                            android:gravity="bottom|left"
+                            android:text="@string/completion_date"
+                            android:textAppearance="?android:textAppearanceSmall"
+                            android:textColor="@color/fontColorBlack"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView_add_job_completion_date"
+                            android:onClick="addJobDateCompleteClick"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".75"
+                            android:gravity="right"
+                            android:hint="@string/not_set"
+                            android:textColor="@color/textColor" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="25dp"
+                    android:text="@string/terms"
+                    android:layout_marginLeft="10dp" />
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/light_grey_background"
+                    android:elevation="5dp"
+                    android:orientation="vertical"
+                    android:onClick="addPhoneClick"
+                    android:padding="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight=".2"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".25"
+                            android:gravity="bottom|left"
+                            android:text="@string/payment"
+                            android:textAppearance="?android:textAppearanceSmall"
+                            android:textColor="@color/fontColorBlack"
+                            android:textStyle="bold" />
+
+                        <Spinner
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".75"
+                            android:textDirection="rtl"
+                            android:entries="@array/payment_values"
+                            android:id="@+id/spinner_add_job_payment"
+                            android:gravity="right"
+                            android:hint="Name"
+                            android:textColor="@color/textColor"
+                            android:spinnerMode="dialog" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight=".2"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".25"
+                            android:gravity="bottom|left"
+                            android:text="@string/accept_within"
+                            android:textAppearance="?android:textAppearanceSmall"
+                            android:textColor="@color/fontColorBlack"
+                            android:textStyle="bold" />
+
+                        <Spinner
+                            android:id="@+id/spinner_add_job_accept"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight=".75"
+                            android:textDirection="rtl"
+                            android:entries="@array/accept_values"
+                            android:gravity="right"
+                            android:hint="Name"
+                            android:textColor="@color/textColor"
+                            android:spinnerMode="dialog" />
+                    </LinearLayout>
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="25dp"
+                    android:text="@string/job_description"
+                    android:layout_marginLeft="10dp" />
+                <EditText
+                    android:id="@+id/editText_add_job_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@color/light_grey_background"
+                    android:elevation="5dp"
+                    android:hint="@string/type_optional_notes_about_this_client"/>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <Button
+            android:onClick="saveChangesClick"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorPrimary"
+            android:text="@string/save_changes"
+            android:textAllCaps="false"
+            android:gravity="center"
+            android:textColor="@color/fontColorWhite" />
+</RelativeLayout>

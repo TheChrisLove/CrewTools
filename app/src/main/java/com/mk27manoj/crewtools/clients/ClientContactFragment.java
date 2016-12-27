@@ -77,7 +77,7 @@ public class ClientContactFragment extends Fragment {
                             ((TextView) getActivity().findViewById(R.id.textView_client_phone)).setText(mClient.getPhone());
                         }
                         ParseQuery<CVAddress> addressParseQuery = ParseQuery.getQuery(CVAddress.class);
-                        addressParseQuery.whereEqualTo("client", mClient);
+//                        addressParseQuery.whereEqualTo("client", mClient);
                         addressParseQuery.findInBackground(new FindCallback<CVAddress>() {
                             @Override
                             public void done(List<CVAddress> objects, ParseException e) {

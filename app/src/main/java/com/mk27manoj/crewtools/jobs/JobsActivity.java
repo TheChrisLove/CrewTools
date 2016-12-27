@@ -42,7 +42,6 @@ public class JobsActivity extends AppCompatActivity {
         }
         initViews();
         setListeners();
-
     }
 
     private void initViews() {
@@ -86,11 +85,9 @@ public class JobsActivity extends AppCompatActivity {
         fragmentTransaction.commit();
         txtJob.setTextColor(ContextCompat.getColor(mContext, R.color.buttonFontColor));
         imgJob.setColorFilter(0xFFFF4F27, PorterDuff.Mode.SRC_IN);
-
     }
 
     private void setListeners() {
-
         linearJob.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -218,5 +215,4 @@ public class JobsActivity extends AppCompatActivity {
             }
         });
     }
-
 }

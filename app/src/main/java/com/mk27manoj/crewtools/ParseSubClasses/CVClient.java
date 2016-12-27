@@ -10,8 +10,6 @@ import com.parse.ParseObject;
 @ParseClassName("CVClient")
 public class CVClient extends ParseObject {
 
-
-
     public String getBusiness() {
         return getString("business");
     }
@@ -85,7 +83,6 @@ public class CVClient extends ParseObject {
     @Override
     public String toString() {
         super.toString();
-
         return getName();
     }
 }

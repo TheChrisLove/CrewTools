@@ -21,15 +21,18 @@ import com.parse.ParseException;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
+import java.util.ArrayList;
 import java.util.List;
-
 /**
  * Renovated by The Chris Love on 2016-06-12.
  */
 public class ApprovedJobsFragment extends Fragment {
     private Context mContext;
     private View parentView;
+    private ListView mListView;
+    private ArrayList<String> jobsList;
     private static final String TAG = "ApprovedJobsFragment";
+    List<CVJob> mJobs;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -48,10 +51,35 @@ public class ApprovedJobsFragment extends Fragment {
 
     private void initViews() {
         mContext = getActivity();
-//        listView_approved_jobs
+        mListView = (ListView) parentView.findViewById(R.id.listView_approved_jobs);
+
+        ParseQuery<CVJob> query = ParseQuery.getQuery(CVJob.class).whereNotEqualTo("approved", null);
+//        query.whereEqualTo("user", ParseUser.getCurrentUser());
+            
+        query.findInBackground(new FindCallback<CVJob>() {
+            @Override
+            public void done(List<CVJob> objects, ParseException e) {
+                Log.d(TAG, "Opened Jobs Fragment: done() called with: " + "objects = [" + objects + "], e = [" + e + "]");
+                if (e == null) {
+                    mListView.setAdapter(new JobsAdapter(getContext(), objects));
+                }
+            }
+        });
     }
 
     private void setListeners() {
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                CVJob job = (CVJob) parent.getAdapter().getItem(position);
+
+                if (job != null) {
+                    Intent intent = new Intent(getActivity(), JobsActivity.class);
+                    intent.putExtra("Job", job.getObjectId());
+                    startActivity(intent);
+                }
+            }
+        });
     }
 
     @Override

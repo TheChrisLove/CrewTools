@@ -34,6 +34,7 @@ public class ScheduledJobsFragment extends Fragment {
     private ListView mListView;
     private ArrayList<String> jobsList;
     private static final String TAG = "ScheduledJobsFragment";
+    List<CVJob> mJobs;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -51,11 +52,36 @@ public class ScheduledJobsFragment extends Fragment {
 
     private void initViews() {
         mContext = getActivity();
+        mListView = (ListView) parentView.findViewById(R.id.listview_scheduled_jobs_list);
+
+        ParseQuery<CVJob> query = ParseQuery.getQuery(CVJob.class).whereNotEqualTo("schedule", null);
+//        query.whereEqualTo("user", ParseUser.getCurrentUser());
+            
+        query.findInBackground(new FindCallback<CVJob>() {
+            @Override
+            public void done(List<CVJob> objects, ParseException e) {
+                Log.d(TAG, "Opened Jobs Fragment: done() called with: " + "objects = [" + objects + "], e = [" + e + "]");
+                if (e == null) {
+                    mListView.setAdapter(new JobsAdapter(getContext(), objects));
+                }
+            }
+        });
     }
 
     private void setListeners() {
-    }
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                CVJob job = (CVJob) parent.getAdapter().getItem(position);
 
+                if (job != null) {
+                    Intent intent = new Intent(getActivity(), JobsActivity.class);
+                    intent.putExtra("Job", job.getObjectId());
+                    startActivity(intent);
+                }
+            }
+        });
+    }
 
     @Override
     public void onResume() {

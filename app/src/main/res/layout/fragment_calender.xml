@@ -30,10 +30,11 @@
         android:background="@color/colorPrimary">
 
         <TextView
+            android:id="@+id/calender_date_today"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="Monday, November 14, 2016"
+            android:text="Monday, December 26, 2016"
             android:textAppearance="?android:textAppearanceSmall"
             android:textColor="@color/fontColorWhite" />
 
