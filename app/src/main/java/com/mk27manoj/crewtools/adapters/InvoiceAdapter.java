@@ -68,7 +68,9 @@ public class InvoiceAdapter extends BaseAdapter {
         holder.txtEventHeading.setText("#" + data.getObjectId() + " (" + NumberFormat
                 .getCurrencyInstance(new Locale("en", "US")).format(data.getTotal()) + ")");
 
-        holder.txtEventDescription.setText(data.getClient().getName());
+        if(data.getClient() != null) {
+            holder.txtEventDescription.setText(data.getClient().getName());
+        }
 
         if (location == 1) { //Pending
             holder.txtEventTiming.setText("Created on " + new SimpleDateFormat("MM/dd/yyyy").format(data.getDate()));

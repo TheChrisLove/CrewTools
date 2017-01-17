@@ -3,6 +3,7 @@ package com.mk27manoj.crewtools.clients;
 import android.graphics.PorterDuff;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +13,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.appindexing.Action;
+import com.google.android.gms.appindexing.AppIndex;
+import com.google.android.gms.appindexing.Thing;
+import com.google.android.gms.common.api.GoogleApiClient;
 import com.mk27manoj.crewtools.R;
 import com.mk27manoj.crewtools.jobs.JobsActivity;
 import com.mk27manoj.crewtools.fragments.InvoicesFragment;
@@ -19,10 +24,16 @@ import com.mk27manoj.crewtools.fragments.JobListFragment;
 
 public class ClientActivity extends AppCompatActivity {
     private Context mContext;
+    private boolean isEnable = false;
     private ImageView mContactImageView, mJobsImageView, mInvoiceImageView, mPaymentImageView, imgCancel, imgCreateJob;
     private LinearLayout clientLayout, jobLayout, invoicesLayout, paymentLayout;
-    private TextView mContactTextView, mJobsTextView, mInvoiceTextView, mPaymentTextView, txtDone;
+    private TextView mContactTextView, mJobsTextView, mInvoiceTextView, mPaymentTextView, txtCancel, txtDone;
     private String mClientObjectId;
+    /**
+     * ATTENTION: This was auto-generated to implement the App Indexing API.
+     * See https://g.co/AppIndexing/AndroidStudio for more information.
+     */
+    private GoogleApiClient client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +59,8 @@ public class ClientActivity extends AppCompatActivity {
         String name = getIntent().getStringExtra("client");
         if (name != null) {
             if (toolbar != null) {
-                ((TextView) toolbar.findViewById(R.id.textview_toolbar_client_title)).setText(name);
+//                ((TextView) toolbar.findViewById(R.id.textview_toolbar_client_title)).setText(name);
+                ((TextView) toolbar.findViewById(R.id.textview_toolbar_client_title)).setText("VIEW CLIENT");
 
                 mClientObjectId = getIntent().getStringExtra("objectId");
 
@@ -58,8 +70,6 @@ public class ClientActivity extends AppCompatActivity {
         }
 
         clientLayout = (LinearLayout) findViewById(R.id.linealayout_client_contact);
-
-
         if (clientLayout != null) {
             clientLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -72,7 +82,6 @@ public class ClientActivity extends AppCompatActivity {
                     mInvoiceImageView.setColorFilter(0xFFFFFFFF, PorterDuff.Mode.SRC_IN);
                     mPaymentTextView.setTextColor(ContextCompat.getColor(ClientActivity.this, R.color.fontColorWhite));
                     mPaymentImageView.setColorFilter(0xFFFFFFFF, PorterDuff.Mode.SRC_IN);
-
 
                     ClientContactFragment fragment = (ClientContactFragment) getSupportFragmentManager()
                             .findFragmentByTag(ClientContactFragment.TAG);
@@ -100,7 +109,6 @@ public class ClientActivity extends AppCompatActivity {
                     mInvoiceImageView.setColorFilter(0xFFFFFFFF, PorterDuff.Mode.SRC_IN);
                     mPaymentTextView.setTextColor(ContextCompat.getColor(ClientActivity.this, R.color.fontColorWhite));
                     mPaymentImageView.setColorFilter(0xFFFFFFFF, PorterDuff.Mode.SRC_IN);
-
                     getSupportFragmentManager().beginTransaction().replace(R.id.client_container, new JobListFragment()).commit();
                 }
             });
@@ -119,12 +127,10 @@ public class ClientActivity extends AppCompatActivity {
                     mInvoiceImageView.setColorFilter(0xFFFF4F27, PorterDuff.Mode.SRC_IN);
                     mPaymentTextView.setTextColor(ContextCompat.getColor(ClientActivity.this, R.color.fontColorWhite));
                     mPaymentImageView.setColorFilter(0xFFFFFFFF, PorterDuff.Mode.SRC_IN);
-
                     getSupportFragmentManager().beginTransaction().replace(R.id.client_container, new InvoicesFragment()).commit();
                 }
             });
         }
-
 
         paymentLayout = (LinearLayout) findViewById(R.id.linealayout_client_payments);
         if (paymentLayout != null) {
@@ -139,13 +145,15 @@ public class ClientActivity extends AppCompatActivity {
                     mInvoiceImageView.setColorFilter(0xFFFFFFFF, PorterDuff.Mode.SRC_IN);
                     mPaymentTextView.setTextColor(ContextCompat.getColor(ClientActivity.this, R.color.buttonFontColor));
                     mPaymentImageView.setColorFilter(0xFFFF4F27, PorterDuff.Mode.SRC_IN);
-
                     getSupportFragmentManager().beginTransaction().replace(R.id.client_container, new ClientPaymentFragment()).commit();
                 }
             });
         }
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
-    
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -154,20 +162,96 @@ public class ClientActivity extends AppCompatActivity {
 
     private void initViews() {
         mContext = this;
+
+        txtDone = (TextView) findViewById(R.id.imageview_toolbar_client_activity);
         imgCancel = (ImageView) findViewById(R.id.imageview_client_menu_close);
+        txtCancel = (TextView) findViewById(R.id.textview_toolbar_client_cancel);
+
+        txtCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        txtDone.setVisibility(View.VISIBLE);
+
+        txtDone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!isEnable) {
+                    txtDone.setText("Done");
+                    imgCancel.setVisibility(View.GONE);
+                    txtCancel.setVisibility(View.VISIBLE);
+                } else {
+                    txtDone.setText("Edit");
+                    imgCancel.setVisibility(View.VISIBLE);
+                    txtCancel.setVisibility(View.GONE);
+                }
+//                isEnable = !isEnable;
+//                edtName.setEnabled(isEnable);
+//                txtType.setEnabled(isEnable);
+//                txtClient.setEnabled(isEnable);
+//                txtPlace.setEnabled(isEnable);
+//                txtOccurance.setEnabled(isEnable);
+//                txtPriority.setEnabled(isEnable);
+//                txtStartingDate.setEnabled(isEnable);
+//                txtCompletionDate.setEnabled(isEnable);
+//                txtPayment.setEnabled(isEnable);
+//                txtAcceptWithin.setEnabled(isEnable);
+//                edtDescription.setEnabled(isEnable);
+            }
+        });
+
         imgCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
-        
-        imgCreateJob = (ImageView) findViewById(R.id.imageview_toolbar_client_activity);
-        imgCreateJob.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mContext.startActivity(new Intent(mContext, JobsActivity.class));
-            }
-        });
+
+//        imgCreateJob = (ImageView) findViewById(R.id.imageview_toolbar_client_activity);
+//        imgCreateJob.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                mContext.startActivity(new Intent(mContext, JobsActivity.class));
+//            }
+//        });
+    }
+
+    /**
+     * ATTENTION: This was auto-generated to implement the App Indexing API.
+     * See https://g.co/AppIndexing/AndroidStudio for more information.
+     */
+    public Action getIndexApiAction() {
+        Thing object = new Thing.Builder()
+                .setName("Client Page") // TODO: Define a title for the content shown.
+                // TODO: Make sure this auto-generated URL is correct.
+                .setUrl(Uri.parse("http://[ENTER-YOUR-URL-HERE]"))
+                .build();
+        return new Action.Builder(Action.TYPE_VIEW)
+                .setObject(object)
+                .setActionStatus(Action.STATUS_TYPE_COMPLETED)
+                .build();
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        client.connect();
+        AppIndex.AppIndexApi.start(client, getIndexApiAction());
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        AppIndex.AppIndexApi.end(client, getIndexApiAction());
+        client.disconnect();
     }
 }

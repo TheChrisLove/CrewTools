@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:local="http://schemas.android.com/apk/res-auto"
-
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -84,7 +83,7 @@
                     android:id="@+id/textview_home_menu_jobs"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:singleLine="true"
+                    android:maxLines="1"
                     android:text="Jobs"
                     android:textAppearance="?android:textAppearanceSmall"
                     android:textColor="@color/fontColorWhite" />
@@ -108,7 +107,7 @@
                     android:id="@+id/textview_home_menu_client"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:singleLine="true"
+                    android:maxLines="1"
                     android:text="Clients"
                     android:textAppearance="?android:textAppearanceSmall"
                     android:textColor="@color/fontColorWhite" />
@@ -132,7 +131,7 @@
                     android:id="@+id/textview_home_menu_calender"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:singleLine="true"
+                    android:maxLines="1"
                     android:text="Schedule"
                     android:textAppearance="?android:textAppearanceSmall"
                     android:textColor="@color/fontColorWhite" />
@@ -157,7 +156,7 @@
                     android:id="@+id/textview_home_menu_invoices"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:singleLine="true"
+                    android:maxLines="1"
                     android:text="Invoices"
                     android:textAppearance="?android:textAppearanceSmall"
                     android:textColor="@color/fontColorWhite" />
@@ -181,7 +180,7 @@
                     android:id="@+id/textview_home_menu_crew"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:singleLine="true"
+                    android:maxLines="1"
                     android:text="Crew"
                     android:textAppearance="?android:textAppearanceSmall"
                     android:textColor="@color/fontColorWhite" />

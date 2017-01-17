@@ -49,7 +49,6 @@
         <item>90 days</item>
     </string-array>
 
-
     <string name="ok">OK</string>
     <string name="cancel">CANCEL</string>
     <string name="address1">Address 1</string>
@@ -74,7 +73,7 @@
     <string name="services">Services</string>
     <string name="add_services">Add Services</string>
     <string name="total">Total</string>
-    <string name="timeframe">Time Frame</string>
+    <string name="timeframe">TIMEFRAME</string>
     <string name="perform_this_job">Perform this Job</string>
     <string name="priority">Priority</string>
     <string name="starting_date">Starting Date</string>
@@ -92,7 +91,7 @@
     <string name="set_date">Set Date</string>
     <string name="time">Time</string>
     <string name="set_time">Set Time</string>
-    <string name="assign_to">Assigned To</string>
+    <string name="assign_to">ASSIGNED TO"</string>
     <string name="add_new_client">Add New Client</string>
     <string name="invoices">INVOICES</string>
     <string name="all_day">All Day</string>
@@ -118,7 +117,7 @@
     <string name="call_now">Call Now</string>
     <string name="account">Account</string>
     <string name="jobs">Jobs</string>
-    <string name="calendar">Calendar</string>
+    <string name="calendar">SCHEDULE</string>
     <string name="all_images">All Images</string>
     <string name="quantity">Quantity</string>
     <string name="item_is_taxable">Item is Taxable</string>
@@ -131,5 +130,4 @@
     <string name="subtotal">Subtotal</string>
     <string name="we_propose">We Propose</string>
     <string name="we_propose_hereby">hereby to furnish material and labor - complete in accordance with above specification, for the sum of:</string>
-
 </resources>

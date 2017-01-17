@@ -6,6 +6,7 @@
     <color name="colorGrayTitleBar">#93908F</color>
     <color name="colorGrayTextBackground">#93908F</color>
     <color name="colorGrayBackground">#50494F</color>
+    <color name="colorGray">#dddddd</color>
 
     <color name="fontColorWhite">#FFFFFF</color>
     <color name="fontColorBlack">#000000</color>
@@ -17,7 +18,7 @@
     <color name="toolbar_background">#2A2A2A</color>
 
     <color name="edittextBackgroundWhite">#FFFFFF</color>
-    <color name="edittextBackgroundOrnageWhite">#FFF5F3</color>
+    <color name="edittextBackgroundOrangeWhite">#FFF5F3</color>
 
     <color name="hintColor">#FF4F27</color>
     <color name="textColor">#FF4F27</color>

@@ -57,7 +57,6 @@ public class CrewFragment extends Fragment {
         mContext = getActivity();
         mListView = (ListView) parentView.findViewById(R.id.listview_crew_list);
 
-
         ParseQuery<CVEmployee> employeeParseQuery = ParseQuery.getQuery(CVEmployee.class);
         employeeParseQuery.findInBackground(new FindCallback<CVEmployee>() {
             @Override

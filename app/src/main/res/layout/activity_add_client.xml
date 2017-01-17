@@ -32,6 +32,7 @@
                 android:layout_centerInParent="true"
                 android:gravity="center_horizontal"
                 android:textAppearance="?android:textAppearanceSmall"
+                android:textAllCaps="true"
                 android:textColor="@color/fontColorBlack"
                 android:textStyle="bold" />
 
@@ -300,9 +301,10 @@
                     android:maxLines="2"
                     android:padding="@dimen/padding_medium"
                     android:text="Add Adress"
+                    android:background="@color/edittextBackgroundWhite"
                     android:textAppearance="?android:textAppearanceSmall" />
-
             </RelativeLayout>
+            
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -311,10 +313,13 @@
                 android:paddingTop="@dimen/padding_large"
                 android:paddingBottom="@dimen/padding_medium"
                 android:text="ADDRESS" />
+            
             <ListView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/listview_add_client_email"/>
+                android:background="@color/edittextBackgroundWhite"
+                android:id="@+id/listview_add_client_email" />
+            
             <RelativeLayout
                 android:id="@+id/relativelayout_create_job_add_new_service"
                 android:layout_width="match_parent"
@@ -340,8 +345,8 @@
                     android:padding="@dimen/padding_medium"
                     android:text="Add Email Adress"
                     android:textAppearance="?android:textAppearanceSmall" />
-
             </RelativeLayout>
+            
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -350,10 +355,13 @@
                 android:paddingTop="@dimen/padding_large"
                 android:paddingBottom="@dimen/padding_medium"
                 android:text="PHONE NUMBERS" />
+            
             <ListView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/edittextBackgroundWhite"
                 android:id="@+id/listview_add_client_phone"/>
+            
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -378,10 +386,8 @@
                     android:padding="@dimen/padding_medium"
                     android:text="Add Phone Number"
                     android:textAppearance="?android:textAppearanceSmall" />
-
-
-
             </RelativeLayout>
+            
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -390,6 +396,7 @@
                 android:paddingTop="@dimen/padding_large"
                 android:paddingBottom="@dimen/padding_medium"
                 android:text="Notes" />
+            
             <EditText
                 android:id="@+id/editText_add_client_note"
                 android:layout_width="match_parent"
@@ -399,12 +406,12 @@
                 android:hint="Type optional notes about this client"
                 android:padding="@dimen/padding_medium"
                 android:textAppearance="?android:textAppearanceSmall" />
-
         </LinearLayout>
     </ScrollView>
 
     <Button
         android:onClick="saveChangesClick"
+        android:clickable="true"
         android:id="@+id/button_add_client_save"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

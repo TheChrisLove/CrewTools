@@ -54,14 +54,15 @@ public class SplashActivity extends AppCompatActivity {
                     CVUser.logInInBackground(username, password, new LogInCallback() {
                         @Override
                         public void done(ParseUser user, ParseException e) {
-                            Log.d(TAG, "done() called with: " + "user = [" + user.getUsername() + "], e = [" + e + "]");
+//                            if(user != null){
+//                                Log.d(TAG, "done() called with: " + "user = [" + user.getUsername() + "], e = [" + e + "]");
+//                            }
                             if (e == null){
                                 ParseQuery<CVEmployee> employeeParseQuery = ParseQuery.getQuery(CVEmployee.class);
 //                                employeeParseQuery.whereEqualTo("user", user);
                                 employeeParseQuery.findInBackground(new FindCallback<CVEmployee>() {
                                     @Override
                                     public void done(List<CVEmployee> objects, ParseException e) {
-                                        Log.d(TAG, "done() called with: " + "objects = [" + objects.size() + "], e = [" + e + "]");
                                         if (objects.size() == 0){
                                             Intent invitationIntent = new Intent(SplashActivity.this, AcceptInvitationActivity.class);
                                             startActivity(invitationIntent);
@@ -85,8 +86,6 @@ public class SplashActivity extends AppCompatActivity {
                                         }
                                     }
                                 });
-
-
                             } else {
                                 Toast.makeText(SplashActivity.this, "Please reenter your username and password again.", Toast.LENGTH_SHORT).show();
                                 startStartUpActivity();

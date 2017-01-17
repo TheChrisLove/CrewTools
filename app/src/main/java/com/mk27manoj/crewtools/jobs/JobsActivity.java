@@ -36,7 +36,7 @@ public class JobsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_selecetd_job);
+        setContentView(R.layout.activity_selected_job);
         if (getIntent() != null) {
             mJobId = getIntent().getStringExtra("Job");
         }

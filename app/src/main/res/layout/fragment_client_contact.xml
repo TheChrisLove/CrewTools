@@ -2,17 +2,14 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/fontColorGray"
+    android:layout_height="fill_parent"
+    android:background="@color/light_grey_background"
     tools:context="com.mk27manoj.crewtools.clients.ClientContactFragment">
-
 
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/toolbar_add_client"
-        android:layout_above="@+id/button_contact_client">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -20,29 +17,30 @@
             android:orientation="vertical"
             android:layout_above="@+id/button_contact_client"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true">
+            android:layout_alignParentTop="true">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="35dp"
                 android:text="PERSONAL" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/light_grey_background"
+                android:background="@color/edittextBackgroundWhite"
                 android:elevation="5dp"
                 android:orientation="vertical"
                 android:padding="5dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_height="30dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp"
                     android:layout_weight=".2"
                     android:orientation="horizontal">
 
@@ -52,25 +50,34 @@
                         android:layout_weight=".25"
                         android:gravity="bottom|left"
                         android:text="Name"
-                        android:textAppearance="?android:textAppearanceSmall"
-                        android:textColor="@color/fontColorBlack"
-                        android:textStyle="bold" />
+                        android:textSize="18dp"
+                        android:textColor="@color/fontColorBlack" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight=".75"
                         android:gravity="right"
+                        android:textSize="18dp"
                         android:hint="No Name Saved"
+                        android:layout_marginRight="10dp"
                         android:textColorHint="@color/hintColor"
                         android:id="@+id/textView_client_name" />
                 </LinearLayout>
+                
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/colorGray" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_height="30dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp"
                     android:layout_weight=".2"
                     android:orientation="horizontal">
 
@@ -80,25 +87,34 @@
                         android:layout_weight=".25"
                         android:gravity="bottom|left"
                         android:text="Company"
-                        android:textAppearance="?android:textAppearanceSmall"
-                        android:textColor="@color/fontColorBlack"
-                        android:textStyle="bold" />
+                        android:textSize="18dp"
+                        android:textColor="@color/fontColorBlack" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight=".75"
                         android:gravity="right"
+                        android:textSize="18dp"
                         android:hint="No Company Name Saved"
+                        android:layout_marginRight="10dp"
                         android:textColorHint="@color/hintColor"
                         android:id="@+id/textView_client_company" />
                 </LinearLayout>
+                
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/colorGray" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_height="30dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp"
                     android:layout_weight=".2"
                     android:orientation="horizontal">
 
@@ -108,26 +124,35 @@
                         android:layout_weight=".25"
                         android:gravity="bottom|left"
                         android:text="Email"
-                        android:textAppearance="?android:textAppearanceSmall"
-                        android:textColor="@color/fontColorBlack"
-                        android:textStyle="bold" />
+                        android:textSize="18dp"
+                        android:textColor="@color/fontColorBlack" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight=".75"
                         android:gravity="right"
+                        android:textSize="18dp"
                         android:hint="No Email Saved"
+                        android:layout_marginRight="10dp"
                         android:textColorHint="@color/hintColor"
                         android:id="@+id/textView_client_email" />
 
                 </LinearLayout>
+                
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/colorGray" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_height="30dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp"
                     android:layout_weight=".2"
                     android:orientation="horizontal">
 
@@ -137,23 +162,20 @@
                         android:layout_weight=".25"
                         android:gravity="bottom|left"
                         android:text="Phone"
-                        android:textAppearance="?android:textAppearanceSmall"
-                        android:textColor="@color/fontColorBlack"
-                        android:textStyle="bold" />
+                        android:textSize="18dp"
+                        android:textColor="@color/fontColorBlack" />
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight=".75"
                         android:gravity="right"
+                        android:textSize="18dp"
                         android:hint="No Phone Saved"
+                        android:layout_marginRight="10dp"
                         android:textColorHint="@color/hintColor"
                         android:id="@+id/textView_client_phone" />
-
                 </LinearLayout>
-
-
-
             </LinearLayout>
 
             <TextView
@@ -168,45 +190,14 @@
             <ListView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:background="@color/edittextBackgroundWhite"
                 android:id="@+id/listview_client_addresses"/>
-
-
-
-            <TextView
-                android:id="@+id/textViewClientAddEmailAddress"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="25dp"
-                android:text="EMAIL ADDRESSES" />
-
-
-            <!--  This section is for the Clients emails
-                  All emails associated with this client will be in this area -->
-            <ListView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/listview_client_emails"/>
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="25dp"
-                android:text="EMAIL ADDRESSES" />
-
-            <ListView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/listview_client_phonenumbers"/>
-
+            
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/light_grey_background"
+                android:background="@color/edittextBackgroundWhite"
                 android:elevation="5dp"
                 android:orientation="vertical"
                 android:padding="5dp">
@@ -231,6 +222,105 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:paddingLeft="15dp"
+                        android:textSize="18dp"
+                        android:text="Add Address" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textViewClientAddEmailAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="25dp"
+                android:text="EMAIL ADDRESSES" />
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:background="@color/edittextBackgroundWhite"
+                android:id="@+id/listview_client_emails"/>
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/edittextBackgroundWhite"
+                android:elevation="5dp"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@mipmap/ic_green_circle"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_add" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:paddingLeft="15dp"
+                        android:textSize="18dp"
+                        android:text="Add Email Address" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textViewClientAddPhoneNumbers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="25dp"
+                android:text="PHONE NUMBERS" />
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:background="@color/edittextBackgroundWhite"
+                android:id="@+id/listview_client_phonenumbers" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/edittextBackgroundWhite"
+                android:elevation="5dp"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@mipmap/ic_green_circle"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_add" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:paddingLeft="15dp"
+                        android:textSize="18dp"
                         android:text="Add Phone Number" />
                 </LinearLayout>
             </LinearLayout>
@@ -241,21 +331,21 @@
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="25dp"
-                android:text="PHONE NUMBERS" />
+                android:text="NOTES" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:background="@color/light_grey_background"
+                android:background="@color/edittextBackgroundWhite"
                 android:elevation="5dp"
                 android:padding="10dp"
-                android:textColorHint="@color/hintColor"
+                android:textSize="18dp"
+                android:textColorHint="@color/fontColorGray"
                 android:hint="Type optional notes about this client" />
         </LinearLayout>
 
 
     </ScrollView>
-
 
     <Button
         android:id="@+id/button_contact_client"
@@ -267,6 +357,4 @@
         android:text="Call Now"
         android:textAllCaps="false"
         android:textColor="@color/fontColorWhite" />
-
 </RelativeLayout>
-

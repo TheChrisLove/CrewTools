@@ -41,8 +41,7 @@ public class ServiceEditorActivity extends AppCompatActivity {
 
     @Override
     protected void onResume() {
-        super.onResume();
-        
+        super.onResume();  
     }
 
     private void initViews() {

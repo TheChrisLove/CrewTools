@@ -509,6 +509,7 @@
                 android:layout_marginTop="25dp"
                 android:text="@string/job_description"
                 android:layout_marginLeft="10dp" />
+            
             <EditText
                 android:id="@+id/editText_add_job_description"
                 android:layout_width="match_parent"
@@ -516,11 +517,9 @@
                 android:background="@color/light_grey_background"
                 android:elevation="5dp"
                 android:hint="@string/type_optional_notes_about_this_client"/>
-
         </LinearLayout>
     </ScrollView>
-
-
+    
     <Button
         android:onClick="saveChangesClick"
         android:layout_width="match_parent"
@@ -531,5 +530,4 @@
         android:textAllCaps="false"
         android:gravity="center"
         android:textColor="@color/fontColorWhite" />
-
 </RelativeLayout>

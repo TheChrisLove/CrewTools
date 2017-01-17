@@ -60,10 +60,8 @@ public class ClientsFragment extends Fragment {
         mContext = getActivity();
         mListView = (ListView) parentView.findViewById(R.id.listview_clients_list);
 
-
         ParseQuery<CVClient> query = ParseQuery.getQuery(CVClient.class);
-        query.whereMatchesKeyInQuery("company", "company", ParseQuery.getQuery(CVEmployee.class));
-//                                     .whereEqualTo("user", CVUser.getCurrentUser()));
+        query.whereMatchesKeyInQuery("company", "company", ParseQuery.getQuery(CVEmployee.class).whereEqualTo("user", CVUser.getCurrentUser()));
         query.findInBackground(new FindCallback<CVClient>() {
             @Override
             public void done(List<CVClient> objects, ParseException e) {
@@ -74,9 +72,7 @@ public class ClientsFragment extends Fragment {
                 }
             }
         });
-
         //mListView.setAdapter(new JobsAdapter(mContext, clientsList));
-
     }
 
     private void setListeners() {

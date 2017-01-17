@@ -60,9 +60,11 @@ public class ServicePickerActivity extends AppCompatActivity implements JobItemD
         
         startActivity(new Intent(ServicePickerActivity.this, ServicePickerActivity.class));
         Intent intent = new Intent();
-        intent.putExtra(CrewToolsConstants.RESPONCE_SERVICE_ID, services.get(serviceContainer.getChildCount()).getObjectId());
-        intent.putExtra(CrewToolsConstants.RESPONCE_MESSAGE, services.get(serviceContainer.getChildCount()).getName());
-        setResult(CrewToolsConstants.REQUEST_CREATE_JOB_PICK_SERVICE, intent);
+        if(serviceContainer.getChildCount() > 0){
+            intent.putExtra(CrewToolsConstants.RESPONCE_SERVICE_ID, services.get(serviceContainer.getChildCount()).getObjectId());
+            intent.putExtra(CrewToolsConstants.RESPONCE_MESSAGE, services.get(serviceContainer.getChildCount()).getName());
+            setResult(CrewToolsConstants.REQUEST_CREATE_JOB_PICK_SERVICE, intent);
+        }
         finish();
    }
 

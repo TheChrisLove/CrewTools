@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.mk27manoj.crewtools.clients.ClientActivity">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context="com.mk27manoj.crewtools.clients.ClientActivity">
+    
     <android.support.v7.widget.Toolbar xmlns:local="http://schemas.android.com/apk/res-auto"
         android:id="@+id/toolbar_activity_client"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        android:minHeight="@dimen/title_bar_height"
+        android:background="@color/colorGrayTitleBar"
+        android:minHeight="?attr/actionBarSize"
         local:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
@@ -17,67 +19,81 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/imageview_client_menu_close"
+            <RelativeLayout
+                android:id="@+id/relative_create_job_cancel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_marginTop="5dp"
-                android:src="@drawable/ic_close"
-                android:tint="@color/fontColorWhite" />
-            
-            <TextView
-                android:id="@+id/textview_toolbar_client_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_centerInParent="true"
-                android:layout_toLeftOf="@+id/imageview_toolbar_client_activity"
-                android:gravity="center_horizontal"
-                android:textAppearance="?android:textAppearanceMedium"
-                android:textColor="@color/fontColorBlack" />
-            
-<!--
-            <TextView
-                android:id="@+id/imageview_toolbar_client_activity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="@dimen/margin_medium"
-                android:text="Done"
-                android:textColor="@color/fontColorWhite" />
--->
-            
-            <ImageView
-                android:id="@+id/imageview_toolbar_client_activity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="@dimen/margin_medium"
-                android:src="@drawable/ic_add" />
+                android:layout_alignParentLeft="true">
+                
+                <ImageView
+                    android:id="@+id/imageview_client_menu_close"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_close"
+                    android:tint="@color/fontColorWhite" />
+
+                <TextView
+                    android:id="@+id/textview_toolbar_client_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:layout_toLeftOf="@+id/imageview_toolbar_client_activity"
+                    android:gravity="center_horizontal"
+                    android:textStyle="bold"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@color/fontColorBlack" />
+
+                <TextView
+                    android:id="@+id/imageview_toolbar_client_activity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/margin_medium"
+                    android:text="Edit"
+                    android:textSize="18dp"
+                    android:textColor="@color/fontColorWhite" />
+                
+                <TextView
+                    android:id="@+id/textview_toolbar_client_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Cancel"
+                    android:textSize="18dp"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:textColor="@color/fontColorWhite"
+                    android:visibility="gone" />
+            </RelativeLayout>
         </RelativeLayout>
     </android.support.v7.widget.Toolbar>
 
+    <FrameLayout
+        android:id="@+id/client_container"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/toolbar_home_bottom"
+        android:layout_below="@id/toolbar_activity_client" />
 
-    <android.support.v7.widget.Toolbar xmlns:local="http://schemas.android.com/apk/res-auto"
+    <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar_home_bottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:background="@color/toolbar_background"
         android:gravity="center_horizontal"
+        android:layout_marginLeft="-15dp"
         android:minHeight="?attr/actionBarSize"
         local:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:weightSum="4">
+            android:weightSum="4"
+            android:layout_alignParentStart="true">
 
             <LinearLayout
                 android:id="@+id/linealayout_client_contact"
@@ -97,7 +113,7 @@
                     android:id="@+id/textview_client_menu_contact"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:singleLine="true"
+                    android:maxLines="1"
                     android:text="Contact"
                     android:textAppearance="?android:textAppearanceSmall"
                     android:textColor="@color/fontColorWhite" />
@@ -121,7 +137,7 @@
                     android:id="@+id/textview_client_menu_job"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:singleLine="true"
+                    android:maxLines="1"
                     android:text="Jobs"
                     android:textAppearance="?android:textAppearanceSmall"
                     android:textColor="@color/fontColorWhite" />
@@ -145,7 +161,7 @@
                     android:id="@+id/textview_client_menu_invoice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:singleLine="true"
+                    android:maxLines="1"
                     android:text="Invoices"
                     android:textAppearance="?android:textAppearanceSmall"
                     android:textColor="@color/fontColorWhite" />
@@ -169,7 +185,7 @@
                     android:id="@+id/textview_client_menu_payment"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:singleLine="true"
+                    android:maxLines="1"
                     android:text="Payments"
                     android:textAppearance="?android:textAppearanceSmall"
                     android:textColor="@color/fontColorWhite" />
@@ -177,15 +193,5 @@
 
         </LinearLayout>
     </android.support.v7.widget.Toolbar>
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar_activity_client"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_above="@+id/toolbar_home_bottom"
-        android:id="@+id/client_container"></FrameLayout>
-
 
 </RelativeLayout>

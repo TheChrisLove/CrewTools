@@ -27,7 +27,6 @@ import com.parse.ParseUser;
  */
 
 public class JobItemDialogFragment extends DialogFragment {
-
     private static final String TAG = "JobItemDialogFragment";
     private static final String ARG_SERVICE_ID = "arg_service_id";
     private JobItemDialogListener listener;
@@ -64,7 +63,8 @@ public class JobItemDialogFragment extends DialogFragment {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         super.onCreateDialog(savedInstanceState);
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity(), R.style.MyAlertDialogTheme);
+                                                              
         LayoutInflater inflater = getActivity().getLayoutInflater();
         mView = inflater.inflate(R.layout.job_item_dialog_view, null);
         editTextQuantity = (EditText) mView.findViewById(R.id.editText_job_item_quantity);
@@ -73,8 +73,7 @@ public class JobItemDialogFragment extends DialogFragment {
         textViewTotal = (TextView) mView.findViewById(R.id.editText_job_item_total);
         textViewPerText = (TextView) mView.findViewById(R.id.textView_job_item_per_text);
         switchTaxable = (Switch) mView.findViewById(R.id.switch_job_item_taxable);
-        builder.setTitle(R.string.add_services)
-                .setView(mView);
+        builder.setTitle(R.string.add_services).setView(mView);
         if (getArguments() != null){
             try {
                 for (CVService service : ParseQuery.getQuery(CVService.class).whereEqualTo("objectId", getArguments()

@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -38,10 +39,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AddClientActivity extends AppCompatActivity {
-
     private static final int EMAIL_REQUEST_CODE = 22222;
     private static final int PHONE_REQUEST_CODE = 33333;
     private ImageView imgCancel;
+    private Button saveMe;
     private CVClient mClient;
     private ArrayList<CVAddress> addresses;
     private ArrayList<CVEmailAddress> emailAddresses;
@@ -68,13 +69,82 @@ public class AddClientActivity extends AppCompatActivity {
         imgCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 AddClientActivity.this.finish();
+            }
+        });
+        
+        saveMe = (Button) findViewById(R.id.button_add_client_save);
+        saveMe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ParseQuery<CVEmployee> clientParseQuery = ParseQuery.getQuery(CVEmployee.class)
+                        .whereEqualTo("user", ParseUser.getCurrentUser());
+                clientParseQuery.findInBackground(new FindCallback<CVEmployee>() {
+                    @Override
+                    public void done(List<CVEmployee> objects, ParseException e) {
+                        if (e == null) {
+                            for (CVEmployee object : objects) {
+                                cvCompany = object.getCompany();
+                                EditText name = (EditText) findViewById(R.id.editText_add_client_name);
+                                EditText company = (EditText) findViewById(R.id.editText_add_client_company);
+                                EditText email = (EditText) findViewById(R.id.editText_add_client_email);
+                                EditText phone = (EditText) findViewById(R.id.editText_add_client_phone);
+                                Spinner contactBy = (Spinner) findViewById(R.id.spinner_add_client_contact_by);
+                                EditText note = (EditText) findViewById(R.id.editText_add_client_note);
+
+                                if(name.getText().toString().equals("")){
+                                    Toast.makeText(AddClientActivity.this, "Oops! Please enter client name.", Toast.LENGTH_LONG).show();
+                                } else {
+                                    mClient.setName(name != null ? name.getText().toString() : "");
+                                    mClient.setBusiness(company != null ? company.getText().toString() : "");
+                                    mClient.setEmail(email != null ? email.getText().toString() : "");
+                                    mClient.setPhone(phone != null ? phone.getText().toString() : "");
+                                    mClient.setContactMethod(contactBy != null ? contactBy.getSelectedItem().toString() : "phone");
+                                    mClient.setNotes(note != null ? note.getText().toString() : "");
+                                    mClient.setCompany(cvCompany);
+                                    mClient.setACL(new ParseACL());
+                                    mClient.getACL().setReadAccess(CVUser.getCurrentUser(), true);
+                                    mClient.getACL().setWriteAccess(CVUser.getCurrentUser(), true);
+                                    try {
+                                        for (ParseRole role : ParseQuery.getQuery(ParseRole.class).whereContains("name", cvCompany.getObjectId()).find()) {
+                                            mClient.getACL().setRoleWriteAccess(role, true);
+                                            mClient.getACL().setRoleReadAccess(role, true);
+                                        }
+                                    } catch (ParseException e1) {
+                                        e1.printStackTrace();
+                                    }
+                                    mClient.saveEventually(new SaveCallback() {
+                                        @Override
+                                        public void done(ParseException e) {
+                                            if (e == null) {
+                                                for (CVAddress address : addresses) {
+                                                    address.setCompany(cvCompany);
+                                                    address.saveEventually();
+                                                }
+
+                                                for (CVEmailAddress emailAddress : emailAddresses) {
+                                                    emailAddress.setCompany(cvCompany);
+                                                    emailAddress.saveEventually();
+                                                }
+
+                                                for (CVPhoneNumber phoneNumber : phoneNumbers) {
+                                                    phoneNumber.setCompany(cvCompany);
+                                                    phoneNumber.saveEventually();
+                                                }
+                                                finish();
+                                            }
+                                        }
+                                    });
+                                }
+                            }
+                        }
+                    }
+                });
             }
         });
 
         if (((TextView) findViewById(R.id.textview_toolbar_add_client_title)) != null) {
-            ((TextView) findViewById(R.id.textview_toolbar_add_client_title)).setText("Add New Client");
+            ((TextView) findViewById(R.id.textview_toolbar_add_client_title)).setText(R.string.add_new_client);
         }
 
         mClient = new CVClient();
@@ -131,7 +201,6 @@ public class AddClientActivity extends AppCompatActivity {
                 if (listView != null) {
                     listView.setAdapter(adapter);
                 }
-
             } else if (requestCode == EMAIL_REQUEST_CODE) {
                 CVEmailAddress emailAddress = new CVEmailAddress();
                 emailAddress.setPrimary(data.getBooleanExtra(ClientAddEmailDialogActivity.PRIMARY_TAG, false));
@@ -161,69 +230,69 @@ public class AddClientActivity extends AppCompatActivity {
         }
     }
 
-    public void saveChangesClick(View view) throws ParseException {
-        ParseQuery<CVEmployee> clientParseQuery = ParseQuery.getQuery(CVEmployee.class)
-                .whereEqualTo("user", ParseUser.getCurrentUser());
-        clientParseQuery.findInBackground(new FindCallback<CVEmployee>() {
-            @Override
-            public void done(List<CVEmployee> objects, ParseException e) {
-                if (e == null) {
-                    for (CVEmployee object : objects) {
-                        cvCompany = object.getCompany();
-                        EditText name = (EditText) findViewById(R.id.editText_add_client_name);
-                        EditText company = (EditText) findViewById(R.id.editText_add_client_company);
-                        EditText email = (EditText) findViewById(R.id.editText_add_client_email);
-                        EditText phone = (EditText) findViewById(R.id.editText_add_client_phone);
-                        Spinner contactBy = (Spinner) findViewById(R.id.spinner_add_client_contact_by);
-                        EditText note = (EditText) findViewById(R.id.editText_add_client_note);
-
-                        if(name.getText().toString().equals("")){
-                            Toast.makeText(AddClientActivity.this, "Oops! Please enter client name.", Toast.LENGTH_LONG).show();
-                        } else {
-                            mClient.setName(name != null ? name.getText().toString() : "");
-                            mClient.setBusiness(company != null ? company.getText().toString() : "");
-                            mClient.setEmail(email != null ? email.getText().toString() : "");
-                            mClient.setPhone(phone != null ? phone.getText().toString() : "");
-                            mClient.setContactMethod(contactBy != null ? contactBy.getSelectedItem().toString() : "phone");
-                            mClient.setNotes(note != null ? note.getText().toString() : "");
-                            mClient.setCompany(cvCompany);
-                            mClient.setACL(new ParseACL());
-                            mClient.getACL().setReadAccess(CVUser.getCurrentUser(), true);
-                            mClient.getACL().setWriteAccess(CVUser.getCurrentUser(), true);
-                            try {
-                                for (ParseRole role : ParseQuery.getQuery(ParseRole.class).whereContains("name", cvCompany.getObjectId()).find()) {
-                                    mClient.getACL().setRoleWriteAccess(role, true);
-                                    mClient.getACL().setRoleReadAccess(role, true);
-                                }
-                            } catch (ParseException e1) {
-                                e1.printStackTrace();
-                            }
-                            mClient.saveEventually(new SaveCallback() {
-                                @Override
-                                public void done(ParseException e) {
-                                    if (e == null) {
-                                        for (CVAddress address : addresses) {
-                                            address.setCompany(cvCompany);
-                                            address.saveEventually();
-                                        }
-
-                                        for (CVEmailAddress emailAddress : emailAddresses) {
-                                            emailAddress.setCompany(cvCompany);
-                                            emailAddress.saveEventually();
-                                        }
-
-                                        for (CVPhoneNumber phoneNumber : phoneNumbers) {
-                                            phoneNumber.setCompany(cvCompany);
-                                            phoneNumber.saveEventually();
-                                        }
-                                        finish();
-                                    }
-                                }
-                            });
-                        }
-                    }
-                }
-            }
-        });
-    }
+//    public void saveChangesClick(View view) throws ParseException {
+//        ParseQuery<CVEmployee> clientParseQuery = ParseQuery.getQuery(CVEmployee.class)
+//                .whereEqualTo("user", ParseUser.getCurrentUser());
+//        clientParseQuery.findInBackground(new FindCallback<CVEmployee>() {
+//            @Override
+//            public void done(List<CVEmployee> objects, ParseException e) {
+//                if (e == null) {
+//                    for (CVEmployee object : objects) {
+//                        cvCompany = object.getCompany();
+//                        EditText name = (EditText) findViewById(R.id.editText_add_client_name);
+//                        EditText company = (EditText) findViewById(R.id.editText_add_client_company);
+//                        EditText email = (EditText) findViewById(R.id.editText_add_client_email);
+//                        EditText phone = (EditText) findViewById(R.id.editText_add_client_phone);
+//                        Spinner contactBy = (Spinner) findViewById(R.id.spinner_add_client_contact_by);
+//                        EditText note = (EditText) findViewById(R.id.editText_add_client_note);
+//
+//                        if(name.getText().toString().equals("")){
+//                            Toast.makeText(AddClientActivity.this, "Oops! Please enter client name.", Toast.LENGTH_LONG).show();
+//                        } else {
+//                            mClient.setName(name != null ? name.getText().toString() : "");
+//                            mClient.setBusiness(company != null ? company.getText().toString() : "");
+//                            mClient.setEmail(email != null ? email.getText().toString() : "");
+//                            mClient.setPhone(phone != null ? phone.getText().toString() : "");
+//                            mClient.setContactMethod(contactBy != null ? contactBy.getSelectedItem().toString() : "phone");
+//                            mClient.setNotes(note != null ? note.getText().toString() : "");
+//                            mClient.setCompany(cvCompany);
+//                            mClient.setACL(new ParseACL());
+//                            mClient.getACL().setReadAccess(CVUser.getCurrentUser(), true);
+//                            mClient.getACL().setWriteAccess(CVUser.getCurrentUser(), true);
+//                            try {
+//                                for (ParseRole role : ParseQuery.getQuery(ParseRole.class).whereContains("name", cvCompany.getObjectId()).find()) {
+//                                    mClient.getACL().setRoleWriteAccess(role, true);
+//                                    mClient.getACL().setRoleReadAccess(role, true);
+//                                }
+//                            } catch (ParseException e1) {
+//                                e1.printStackTrace();
+//                            }
+//                            mClient.saveEventually(new SaveCallback() {
+//                                @Override
+//                                public void done(ParseException e) {
+//                                    if (e == null) {
+//                                        for (CVAddress address : addresses) {
+//                                            address.setCompany(cvCompany);
+//                                            address.saveEventually();
+//                                        }
+//
+//                                        for (CVEmailAddress emailAddress : emailAddresses) {
+//                                            emailAddress.setCompany(cvCompany);
+//                                            emailAddress.saveEventually();
+//                                        }
+//
+//                                        for (CVPhoneNumber phoneNumber : phoneNumbers) {
+//                                            phoneNumber.setCompany(cvCompany);
+//                                            phoneNumber.saveEventually();
+//                                        }
+//                                        finish();
+//                                    }
+//                                }
+//                            });
+//                        }
+//                    }
+//                }
+//            }
+//        });
+//    }
 }
